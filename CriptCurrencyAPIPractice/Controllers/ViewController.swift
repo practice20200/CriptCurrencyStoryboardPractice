@@ -8,8 +8,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-//
-//    @IBOutlet weak var btcPrice: UILabel!
+    @IBOutlet weak var settings: UIBarButtonItem!//
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    var data = MainCollectionViewData.dataProvider()
+    //@IBOutlet weak var btcPrice: UILabel!
 //    @IBOutlet weak var ethPrice: UILabel!
 //    @IBOutlet weak var usdPrice: UILabel!
 //    @IBOutlet weak var ausdPric: UILabel!
@@ -17,13 +23,18 @@ class ViewController: UIViewController {
 //
 //    let urlString =  "https://api.coingecko.com/api/v3/exchange_rates"
 //
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
+    override func viewDidLoad() {
+        super.viewDidLoad()
 //        fetchData()
 //
 //        let _ = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(refreshData), userInfo: nil, repeats: true)
 //
-//    }
+    
+    collectionView.delegate = self
+    collectionView.dataSource = self
+        collectionView.register(MainCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+    
+    }
 //
 //    func fetchData(){
 //        guard let url = URL(string: urlString) else{ return }
@@ -45,7 +56,8 @@ class ViewController: UIViewController {
 //
 //        }
 //        dataTask.resume()
-//    }
+    
+    //    }
 //
 //
 //
@@ -75,7 +87,7 @@ class ViewController: UIViewController {
 //    @objc func refreshData() -> Void{
 //        fetchData()
 //    }
-}vc
+}
 //
 //
 //
@@ -96,3 +108,22 @@ class ViewController: UIViewController {
 //struct Rates: Codable{
 //    let rates: Currency
 //}
+
+
+extension ViewController : UICollectionViewDelegate {
+    
+}
+
+extension ViewController : UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return data.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MainCollectionViewCell
+        
+        return cell
+    }
+    
+    
+}

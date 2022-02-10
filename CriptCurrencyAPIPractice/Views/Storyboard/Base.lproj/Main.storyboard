@@ -5,29 +5,83 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Chand-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CriptCurrencyAPIPractice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="currency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPR-Y0-YN1">
+                                <rect key="frame" x="20" y="160" width="68" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hb-i3-cEh">
+                                <rect key="frame" x="352" y="160" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="z3i-Nd-ysh">
+                                <rect key="frame" x="0.0" y="190" width="414" height="623"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HFZ-Cf-d3z">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="1ni-u0-F0x">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="KOV-43-0iD">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wPR-Y0-YN1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="4pa-QT-5Ud"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5hb-i3-cEh" secondAttribute="trailing" constant="20" id="9Ta-Xo-uRJ"/>
+                            <constraint firstItem="wPR-Y0-YN1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="PDZ-gG-KJ3"/>
+                            <constraint firstItem="5hb-i3-cEh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="R6Z-zp-T7L"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="z3i-Nd-ysh" secondAttribute="trailing" id="b0e-Nd-484"/>
+                            <constraint firstItem="z3i-Nd-ysh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cWc-zD-jvD"/>
+                            <constraint firstItem="z3i-Nd-ysh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="etz-1u-eoq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="z3i-Nd-ysh" secondAttribute="bottom" id="wtj-Wx-zZd"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="4PC-5m-EX6"/>
+                    <navigationItem key="navigationItem" title="Chand" id="4PC-5m-EX6">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="ra4-h4-uf8"/>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="collectionView" destination="z3i-Nd-ysh" id="ciJ-RU-VOp"/>
+                        <outlet property="dateLabel" destination="5hb-i3-cEh" id="Xu2-Y4-Xk0"/>
+                        <outlet property="settings" destination="ra4-h4-uf8" id="D65-ci-Blv"/>
+                        <outlet property="titleLabel" destination="wPR-Y0-YN1" id="nbE-fX-Bzy"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="939.13043478260875" y="65.625"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="lCv-47-zEa">
             <objects>
-                <viewController id="rBs-Xo-1yu" sceneMemberID="viewController">
+                <viewController id="rBs-Xo-1yu" customClass="SettingsViewController" customModule="CriptCurrencyAPIPractice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Kl-Kd-wR5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,12 +91,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H5p-zR-Kz2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1770" y="-859"/>
+            <point key="canvasLocation" x="1770" y="-856"/>
         </scene>
-        <!--View Controller-->
+        <!--Coins View Controller-->
         <scene sceneID="fFI-IZ-hGX">
             <objects>
-                <viewController id="8IC-W8-hxg" sceneMemberID="viewController">
+                <viewController id="8IC-W8-hxg" customClass="CoinsViewController" customModule="CriptCurrencyAPIPractice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bga-Xz-hTi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,10 +108,10 @@
             </objects>
             <point key="canvasLocation" x="2621" y="-465"/>
         </scene>
-        <!--View Controller-->
+        <!--Currencies View Controller-->
         <scene sceneID="qUx-u6-Pi0">
             <objects>
-                <viewController id="Wfh-Ld-3AZ" sceneMemberID="viewController">
+                <viewController id="Wfh-Ld-3AZ" customClass="CurrenciesViewController" customModule="CriptCurrencyAPIPractice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pkx-wG-Ys7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -69,10 +123,10 @@
             </objects>
             <point key="canvasLocation" x="2614" y="-1140"/>
         </scene>
-        <!--View Controller-->
+        <!--Gold View Controller-->
         <scene sceneID="hFu-iv-Lfi">
             <objects>
-                <viewController id="rrM-fl-P0z" sceneMemberID="viewController">
+                <viewController id="rrM-fl-P0z" customClass="GoldViewController" customModule="CriptCurrencyAPIPractice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U9M-xt-DT3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,15 +136,30 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sV6-Ol-uVr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1770" y="66"/>
+            <point key="canvasLocation" x="2620" y="210"/>
+        </scene>
+        <!--Language Change View Controller-->
+        <scene sceneID="VP3-rE-H1N">
+            <objects>
+                <viewController id="Pwh-Q5-bu0" customClass="LanguageChangeViewController" customModule="CriptCurrencyAPIPractice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JiA-Ph-4bv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="YXE-kJ-jqa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ucq-Md-bIc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2617" y="880"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6tr-MH-Pfa">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qPg-fO-Jvi" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EIH-qo-jCR">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="EIH-qo-jCR">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -100,7 +169,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qEb-AO-Ywk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="28.985507246376812" y="65.625"/>
+            <point key="canvasLocation" x="36" y="-6"/>
         </scene>
     </scenes>
     <resources>
