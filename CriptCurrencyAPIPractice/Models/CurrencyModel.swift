@@ -6,6 +6,11 @@
 //
 
 import Foundation
+import UIKit
 struct CurrencyModel {
-    
+    var currencyIcon : UIImage?
+    var fullCurrencyTitle : String
+    var currencyTitle : String
+    var previousRate : String
+    var upToDatedRate : String
 }

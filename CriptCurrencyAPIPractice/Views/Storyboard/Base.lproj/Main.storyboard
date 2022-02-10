@@ -12,7 +12,6 @@
         <!--Chand-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CriptCurrencyAPIPractice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -69,12 +68,13 @@
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="collectionView" destination="z3i-Nd-ysh" id="ciJ-RU-VOp"/>
+                        <outlet property="collectionView" destination="z3i-Nd-ysh" id="XTg-gx-ua0"/>
                         <outlet property="dateLabel" destination="5hb-i3-cEh" id="Xu2-Y4-Xk0"/>
                         <outlet property="settings" destination="ra4-h4-uf8" id="D65-ci-Blv"/>
                         <outlet property="titleLabel" destination="wPR-Y0-YN1" id="nbE-fX-Bzy"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="939.13043478260875" y="65.625"/>
         </scene>

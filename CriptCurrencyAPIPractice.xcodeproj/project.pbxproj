@@ -15,6 +15,7 @@
 		B3CA009327B5C456000B548C /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CA009227B5C456000B548C /* MainCollectionViewCell.swift */; };
 		B3CA009627B5C4C6000B548C /* MainCollectionViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CA009527B5C4C6000B548C /* MainCollectionViewData.swift */; };
 		B3CA009827B5C53D000B548C /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CA009727B5C53D000B548C /* CurrencyModel.swift */; };
+		B3CA009B27B5CC05000B548C /* Elements in Frameworks */ = {isa = PBXBuildFile; productRef = B3CA009A27B5CC05000B548C /* Elements */; };
 		B3E02AE227AC82B000ADA9F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E02AE127AC82B000ADA9F4 /* AppDelegate.swift */; };
 		B3E02AE427AC82B000ADA9F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E02AE327AC82B000ADA9F4 /* SceneDelegate.swift */; };
 		B3E02AE627AC82B000ADA9F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E02AE527AC82B000ADA9F4 /* ViewController.swift */; };
@@ -47,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3CA009B27B5CC05000B548C /* Elements in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +165,9 @@
 			dependencies = (
 			);
 			name = CriptCurrencyAPIPractice;
+			packageProductDependencies = (
+				B3CA009A27B5CC05000B548C /* Elements */,
+			);
 			productName = CriptCurrencyAPIPractice;
 			productReference = B3E02ADE27AC82B000ADA9F4 /* CriptCurrencyAPIPractice.app */;
 			productType = "com.apple.product-type.application";
@@ -191,6 +196,9 @@
 				Base,
 			);
 			mainGroup = B3E02AD527AC82AF00ADA9F4;
+			packageReferences = (
+				B3CA009927B5CC05000B548C /* XCRemoteSwiftPackageReference "ElementKit" */,
+			);
 			productRefGroup = B3E02ADF27AC82B000ADA9F4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -446,6 +454,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B3CA009927B5CC05000B548C /* XCRemoteSwiftPackageReference "ElementKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/practice20200/ElementKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B3CA009A27B5CC05000B548C /* Elements */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3CA009927B5CC05000B548C /* XCRemoteSwiftPackageReference "ElementKit" */;
+			productName = Elements;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B3E02AD627AC82AF00ADA9F4 /* Project object */;
 }

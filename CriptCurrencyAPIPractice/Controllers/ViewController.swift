@@ -7,12 +7,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
     @IBOutlet weak var settings: UIBarButtonItem!//
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    
+    
     
     var data = MainCollectionViewData.dataProvider()
     //@IBOutlet weak var btcPrice: UILabel!
