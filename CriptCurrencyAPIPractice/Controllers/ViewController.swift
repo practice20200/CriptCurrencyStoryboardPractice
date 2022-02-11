@@ -35,10 +35,9 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
         
         
         let viewLayout =  UICollectionViewFlowLayout()
-        viewLayout.scrollDirection = .horizontal
-        viewLayout.minimumInteritemSpacing = 20
-        viewLayout.sectionInset = UIEdgeInsets(top: 25, left: 25, bottom: 25, right: 25)
-        
+        viewLayout.scrollDirection = .vertical
+        viewLayout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        collectionView.collectionViewLayout = viewLayout
         collectionView.backgroundColor = .white
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = UIColor.systemGray5
@@ -46,9 +45,13 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(MainCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-        collectionView.clipsToBounds = true
-        collectionView.layer.cornerRadius = 15
+
         
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+            //collectionView.bounds = frame.
     }
     
     
@@ -150,8 +153,8 @@ extension ViewController : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let height = (collectionView.frame.height * 1/3)+10
-        let width = (collectionView.frame.width * 1/2)-10
+        let height = (collectionView.frame.height * 1/3)
+        let width = (collectionView.frame.width * 1/2)-30
         return CGSize(width: width, height: height)
     }
 }
