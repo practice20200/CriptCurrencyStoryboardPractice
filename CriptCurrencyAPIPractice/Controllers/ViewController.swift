@@ -6,15 +6,15 @@
 //
 
 import UIKit
+import Elements
 
 class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
-    @IBOutlet weak var settings: UIBarButtonItem!//
+    @IBOutlet weak var settings: UIBarButtonItem!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    
+
     
     
     var data = MainCollectionViewData.dataProvider()
@@ -32,12 +32,26 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
 //
 //        let _ = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(refreshData), userInfo: nil, repeats: true)
 //
-    
-    collectionView.delegate = self
-    collectionView.dataSource = self
+        
+        
+        let viewLayout =  UICollectionViewFlowLayout()
+        viewLayout.scrollDirection = .horizontal
+        viewLayout.minimumInteritemSpacing = 20
+        viewLayout.sectionInset = UIEdgeInsets(top: 25, left: 25, bottom: 25, right: 25)
+        
+        collectionView.backgroundColor = .white
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = UIColor.systemGray5
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
         collectionView.register(MainCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-    
+        collectionView.clipsToBounds = true
+        collectionView.layer.cornerRadius = 15
+        
     }
+    
+    
 //
 //    func fetchData(){
 //        guard let url = URL(string: urlString) else{ return }
@@ -125,8 +139,19 @@ extension ViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MainCollectionViewCell
         
+        let item = data[indexPath.row]
+        cell.currencyIconImage.image = item.currencyIcon
+        cell.fullCurrencyTitle.text = item.fullCurrencyTitle
+        cell.currencyTitle.text = item.currencyTitle
+        cell.previousRate.text = item.previousRate
+        cell.upToDateRate.text = item.upToDateRate
+        
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let height = (collectionView.frame.height * 1/3)+10
+        let width = (collectionView.frame.width * 1/2)-10
+        return CGSize(width: width, height: height)
+    }
 }

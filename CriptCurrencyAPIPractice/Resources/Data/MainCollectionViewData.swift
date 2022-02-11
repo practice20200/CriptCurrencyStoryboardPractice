@@ -15,7 +15,27 @@ class MainCollectionViewData {
                                    fullCurrencyTitle: "US Dollar",
                                    currencyTitle: "USD",
                                    previousRate: "26400",
-                                   upToDatedRate: "26500"))
+                                   upToDateRate: "26500"))
+        array.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
+                                   fullCurrencyTitle: "US Dollar",
+                                   currencyTitle: "USD",
+                                   previousRate: "26400",
+                                   upToDateRate: "26500"))
+        array.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
+                                   fullCurrencyTitle: "US Dollar",
+                                   currencyTitle: "USD",
+                                   previousRate: "26400",
+                                   upToDateRate: "26500"))
+        array.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
+                                   fullCurrencyTitle: "US Dollar",
+                                   currencyTitle: "USD",
+                                   previousRate: "26400",
+                                   upToDateRate: "26500"))
+        array.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
+                                   fullCurrencyTitle: "US Dollar",
+                                   currencyTitle: "USD",
+                                   previousRate: "26400",
+                                   upToDateRate: "26500"))
         return array
     }
 }

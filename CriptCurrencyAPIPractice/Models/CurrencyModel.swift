@@ -12,5 +12,5 @@ struct CurrencyModel {
     var fullCurrencyTitle : String
     var currencyTitle : String
     var previousRate : String
-    var upToDatedRate : String
+    var upToDateRate : String
 }
