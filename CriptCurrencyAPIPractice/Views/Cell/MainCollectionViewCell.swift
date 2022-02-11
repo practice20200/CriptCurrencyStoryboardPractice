@@ -108,6 +108,7 @@ class MainCollectionViewCell : UICollectionViewCell{
 
 
     func setUpView(){
+        contentView.layer.cornerRadius = 15
         contentView.backgroundColor = UIColor.white
        // contentView.collisionBoundingPath.stroke()
         contentView.addSubview(dollarTitleStack)
