@@ -9,13 +9,15 @@ import UIKit
 import Elements
 
 class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
+    
+    //================ Elements =================
     @IBOutlet weak var settings: UIBarButtonItem!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
     @IBOutlet weak var collectionView: UICollectionView!
 
-    
+   
     
     var data = MainCollectionViewData.dataProvider()
     //@IBOutlet weak var btcPrice: UILabel!
@@ -26,6 +28,16 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
 //
 //    let urlString =  "https://api.coingecko.com/api/v3/exchange_rates"
 //
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //================ Viewa =================
     override func viewDidLoad() {
         super.viewDidLoad()
 //        fetchData()
@@ -34,6 +46,24 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
 //
         
         
+        
+
+        
+    }
+    
+    //override func viewDidLayoutSubviews() {
+      //  super.viewDidLayoutSubviews()
+   //     collectionView.frame = view.bounds
+ //   }
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        view.backgroundColor = UIColor.white
+       
+        guard collectionView != nil else{ return }
+        view.addSubview(collectionView)
         let viewLayout =  UICollectionViewFlowLayout()
         viewLayout.scrollDirection = .vertical
         viewLayout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
@@ -45,14 +75,19 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(MainCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-
+        
+        dateLabel.text = DateFormatters.dateForMatter(date: Date())
         
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-            //collectionView.bounds = frame.
+    
+    //================ functions =================
+    @IBAction func settingHandler(_ sender: Any) {
+        let vc = SettingsViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    
     
     
 //

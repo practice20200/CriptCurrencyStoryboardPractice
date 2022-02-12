@@ -9,10 +9,11 @@ import UIKit
 
 class CoinsViewController: UIViewController {
 
+    @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        view.backgroundColor = UIColor.white
+        title = "Coins"
     }
     
 
