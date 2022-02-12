@@ -9,6 +9,8 @@ import UIKit
 
 class CurrenciesViewController: UIViewController {
 
+    @IBOutlet weak var collectionVeiw: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white

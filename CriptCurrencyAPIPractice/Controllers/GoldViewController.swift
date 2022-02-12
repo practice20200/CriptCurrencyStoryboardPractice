@@ -9,6 +9,7 @@ import UIKit
 
 class GoldViewController: UIViewController {
 
+    @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
