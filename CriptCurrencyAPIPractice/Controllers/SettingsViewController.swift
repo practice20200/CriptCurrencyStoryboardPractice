@@ -10,6 +10,7 @@ import UIKit
 class SettingsViewController: UIViewController {
     
     var data = SettingTitleDataProvider.dataProvider()
+
     
     lazy var tableView : UITableView = {
         let table = UITableView()
@@ -52,8 +53,25 @@ extension SettingsViewController : UITableViewDelegate {
         
         data[indexPath.row].isComplete.toggle()
         tableView.reloadRows(at: [indexPath], with: .fade)
-        
-        
+
+        let index = data[indexPath.row].title
+        if index == "All"{
+            let vc =  ViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else if index == "Currencies"{
+            let vc = CurrenciesViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else if index == "Coins"{
+            let vc = CoinsViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else if index == "Gold"{
+            let vc = GoldViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else if index == "Change Language"{
+            let vc = LanguageChangeViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+            
     }
 }
 
@@ -76,3 +94,5 @@ extension SettingsViewController : UITableViewDataSource {
         return 70
     }
 }
+
+
