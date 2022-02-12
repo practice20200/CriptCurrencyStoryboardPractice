@@ -29,6 +29,7 @@
 		B3E02AE927AC82B000ADA9F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3E02AE727AC82B000ADA9F4 /* Main.storyboard */; };
 		B3E02AEB27AC82BC00ADA9F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3E02AEA27AC82BC00ADA9F4 /* Assets.xcassets */; };
 		B3E02AEE27AC82BC00ADA9F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3E02AEC27AC82BC00ADA9F4 /* LaunchScreen.storyboard */; };
+		B3EDD39127B7A9050020FA83 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EDD39027B7A9050020FA83 /* HeaderCollectionReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		B3E02AEA27AC82BC00ADA9F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3E02AED27AC82BC00ADA9F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3E02AEF27AC82BC00ADA9F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3EDD39027B7A9050020FA83 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +83,6 @@
 		B3C5FCCE27B74BAE00223256 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				B3C5FCD327B753EE00223256 /* LanguageSelectionDataProvider.swift */,
 				B3C5FCCF27B74BB900223256 /* DateFormatters.swift */,
 			);
 			path = Utils;
@@ -113,6 +114,7 @@
 				B3CA008827B5B0D6000B548C /* CoinsViewController.swift */,
 				B3CA008A27B5B0EA000B548C /* GoldViewController.swift */,
 				B3CA008227B5B06A000B548C /* SettingsViewController.swift */,
+				B3EDD39027B7A9050020FA83 /* HeaderCollectionReusableView.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -152,6 +154,7 @@
 		B3CA009427B5C4A6000B548C /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				B3C5FCD327B753EE00223256 /* LanguageSelectionDataProvider.swift */,
 				B3CA009527B5C4C6000B548C /* MainCollectionViewData.swift */,
 				B34BF21527B72396004BF3DA /* SettingTitleDataProvider.swift */,
 			);
@@ -275,6 +278,7 @@
 				B34BF21427B72212004BF3DA /* SettingModel.swift in Sources */,
 				B3C5FCD627B7544400223256 /* LanguageSelection.swift in Sources */,
 				B3C5FCD227B7516400223256 /* SelectLanguageTableViewCell.swift in Sources */,
+				B3EDD39127B7A9050020FA83 /* HeaderCollectionReusableView.swift in Sources */,
 				B3CA008927B5B0D6000B548C /* CoinsViewController.swift in Sources */,
 				B3C5FCD027B74BB900223256 /* DateFormatters.swift in Sources */,
 				B3CA009827B5C53D000B548C /* CurrencyModel.swift in Sources */,
