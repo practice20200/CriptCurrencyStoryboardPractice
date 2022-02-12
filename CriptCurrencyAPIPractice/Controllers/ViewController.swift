@@ -46,6 +46,24 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
 //
         
         
+        
+
+        
+    }
+    
+    //override func viewDidLayoutSubviews() {
+      //  super.viewDidLayoutSubviews()
+   //     collectionView.frame = view.bounds
+ //   }
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        view.backgroundColor = UIColor.white
+       
+        guard collectionView != nil else{ return }
+        view.addSubview(collectionView)
         let viewLayout =  UICollectionViewFlowLayout()
         viewLayout.scrollDirection = .vertical
         viewLayout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
@@ -57,16 +75,10 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(MainCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-
+        
+        dateLabel.text = DateFormatters.dateForMatter(date: Date())
         
     }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-            //collectionView.bounds = frame.
-    }
-    
-    
     
     
     //================ functions =================

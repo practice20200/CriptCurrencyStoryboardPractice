@@ -11,7 +11,8 @@ class LanguageChangeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = UIColor.white
+        title = "Select a language"
         // Do any additional setup after loading the view.
     }
     

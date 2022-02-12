@@ -10,6 +10,7 @@
 		B34BF21127B72124004BF3DA /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34BF21027B72124004BF3DA /* SettingTableViewCell.swift */; };
 		B34BF21427B72212004BF3DA /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34BF21327B72212004BF3DA /* SettingModel.swift */; };
 		B34BF21627B72396004BF3DA /* SettingTitleDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34BF21527B72396004BF3DA /* SettingTitleDataProvider.swift */; };
+		B3C5FCD027B74BB900223256 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C5FCCF27B74BB900223256 /* DateFormatters.swift */; };
 		B3CA008327B5B06A000B548C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CA008227B5B06A000B548C /* SettingsViewController.swift */; };
 		B3CA008527B5B082000B548C /* LanguageChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CA008427B5B082000B548C /* LanguageChangeViewController.swift */; };
 		B3CA008727B5B0C3000B548C /* CurrenciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CA008627B5B0C3000B548C /* CurrenciesViewController.swift */; };
@@ -31,6 +32,7 @@
 		B34BF21027B72124004BF3DA /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		B34BF21327B72212004BF3DA /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
 		B34BF21527B72396004BF3DA /* SettingTitleDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTitleDataProvider.swift; sourceTree = "<group>"; };
+		B3C5FCCF27B74BB900223256 /* DateFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
 		B3CA008227B5B06A000B548C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B3CA008427B5B082000B548C /* LanguageChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageChangeViewController.swift; sourceTree = "<group>"; };
 		B3CA008627B5B0C3000B548C /* CurrenciesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		B3C5FCCE27B74BAE00223256 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B3C5FCCF27B74BB900223256 /* DateFormatters.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		B3CA008C27B5B1B9000B548C /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +112,7 @@
 		B3CA008F27B5B296000B548C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B3C5FCCE27B74BAE00223256 /* Utils */,
 				B34BF21227B721EF004BF3DA /* ViewModels */,
 				B3CA009427B5C4A6000B548C /* Data */,
 				B3E02AEA27AC82BC00ADA9F4 /* Assets.xcassets */,
@@ -253,6 +264,7 @@
 				B34BF21127B72124004BF3DA /* SettingTableViewCell.swift in Sources */,
 				B34BF21427B72212004BF3DA /* SettingModel.swift in Sources */,
 				B3CA008927B5B0D6000B548C /* CoinsViewController.swift in Sources */,
+				B3C5FCD027B74BB900223256 /* DateFormatters.swift in Sources */,
 				B3CA009827B5C53D000B548C /* CurrencyModel.swift in Sources */,
 				B3CA009627B5C4C6000B548C /* MainCollectionViewData.swift in Sources */,
 				B3CA008527B5B082000B548C /* LanguageChangeViewController.swift in Sources */,

@@ -51,12 +51,13 @@ class SettingsViewController: UIViewController {
 extension SettingsViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        
         data[indexPath.row].isComplete.toggle()
-        tableView.reloadRows(at: [indexPath], with: .fade)
-
+        tableView.reloadData()
+        
         let index = data[indexPath.row].title
         if index == "All"{
-            let vc =  ViewController()
+            let vc = ViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         }else if index == "Currencies"{
             let vc = CurrenciesViewController()
