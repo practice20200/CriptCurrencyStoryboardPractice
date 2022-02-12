@@ -9,13 +9,15 @@ import UIKit
 import Elements
 
 class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
+    
+    //================ Elements =================
     @IBOutlet weak var settings: UIBarButtonItem!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
     @IBOutlet weak var collectionView: UICollectionView!
 
-    
+   
     
     var data = MainCollectionViewData.dataProvider()
     //@IBOutlet weak var btcPrice: UILabel!
@@ -26,6 +28,16 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
 //
 //    let urlString =  "https://api.coingecko.com/api/v3/exchange_rates"
 //
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //================ Viewa =================
     override func viewDidLoad() {
         super.viewDidLoad()
 //        fetchData()
@@ -53,6 +65,17 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
         super.viewDidLayoutSubviews()
             //collectionView.bounds = frame.
     }
+    
+    
+    
+    
+    //================ functions =================
+    @IBAction func settingHandler(_ sender: Any) {
+        let vc = SettingsViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
     
     
 //
