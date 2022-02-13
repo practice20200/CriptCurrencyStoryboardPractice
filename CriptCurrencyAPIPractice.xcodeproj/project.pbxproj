@@ -75,6 +75,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B311CF1A27B90A0700A44043 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B3E02AE527AC82B000ADA9F4 /* ViewController.swift */,
+				B3EDD39027B7A9050020FA83 /* HeaderCollectionReusableView.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		B34BF21227B721EF004BF3DA /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,13 +121,12 @@
 		B3CA008E27B5B1D3000B548C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B3E02AE527AC82B000ADA9F4 /* ViewController.swift */,
+				B311CF1A27B90A0700A44043 /* ViewControllers */,
 				B3CA008427B5B082000B548C /* LanguageChangeViewController.swift */,
 				B3CA008627B5B0C3000B548C /* CurrenciesViewController.swift */,
 				B3CA008827B5B0D6000B548C /* CoinsViewController.swift */,
 				B3CA008A27B5B0EA000B548C /* GoldViewController.swift */,
 				B3CA008227B5B06A000B548C /* SettingsViewController.swift */,
-				B3EDD39027B7A9050020FA83 /* HeaderCollectionReusableView.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
