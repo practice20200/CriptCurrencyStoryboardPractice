@@ -51,11 +51,54 @@ class SettingsViewController: UIViewController {
 extension SettingsViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let index = data[indexPath.section].1[indexPath.row].title
+        print("index: \(index)")
         
-        data[indexPath.row].isComplete.toggle()
+        for _ in data {
+            if index == "All"{
+                print("+++++++++++++++++++++++")
+                data[indexPath.section].1[indexPath.row].isComplete = true
+                data[indexPath.section].1[1].isComplete = false
+                data[indexPath.section].1[2].isComplete = false
+                data[indexPath.section].1[3].isComplete = false
+                print("title1:\(data[indexPath.section].1[indexPath.row].title)")
+                print("isComplete1:\(data[indexPath.section].1[indexPath.row].isComplete)")
+                print("+++++++++++++++++++++++")
+            }else if index == "Currencies"{
+                print("=======================")
+                data[indexPath.section].1[indexPath.row].isComplete = true
+                data[indexPath.section].1[0].isComplete = false
+                data[indexPath.section].1[2].isComplete = false
+                data[indexPath.section].1[3].isComplete = false
+                print("title2: :\(data[indexPath.section].1[indexPath.row].title )")
+                print("isComplete2:\(data[indexPath.section].1[indexPath.row].isComplete)")
+                print("=======================")
+            }else if index == "Coins"{
+                print("=======================")
+                data[indexPath.section].1[indexPath.row].isComplete = true
+                data[indexPath.section].1[0].isComplete = false
+                data[indexPath.section].1[1].isComplete = false
+                data[indexPath.section].1[3].isComplete = false
+                print("title2: :\(data[indexPath.section].1[indexPath.row].title )")
+                print("isComplete2:\(data[indexPath.section].1[indexPath.row].isComplete)")
+                print("=======================")
+            }else if index == "Gold"{
+                print("=======================")
+                data[indexPath.section].1[indexPath.row].isComplete = true
+                data[indexPath.section].1[0].isComplete = false
+                data[indexPath.section].1[1].isComplete = false
+                data[indexPath.section].1[2].isComplete = false
+                print("title2: :\(data[indexPath.section].1[indexPath.row].title )")
+                print("isComplete2:\(data[indexPath.section].1[indexPath.row].isComplete)")
+                print("=======================")
+            }
+
+        }
         tableView.reloadData()
+  
         
-        let index = data[indexPath.row].title
+        
+        
         if index == "All"{
             let vc = ViewController()
             self.navigationController?.pushViewController(vc, animated: true)
@@ -77,13 +120,18 @@ extension SettingsViewController : UITableViewDelegate {
 }
 
 extension SettingsViewController : UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return data.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let sectionData = data[section]
+        return sectionData.1.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SettingTableViewCell
-        let item = data[indexPath.row]
+        let item = data[indexPath.section].1[indexPath.row]
         cell.iconImage.image = item.iconImage
         cell.titleLabel.text = item.title
         cell.accessoryType = item.isComplete ? .checkmark : .none
@@ -94,6 +142,14 @@ extension SettingsViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
     }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 20
+    }
+    
+     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return data[section].0
+     }
 }
 
 
