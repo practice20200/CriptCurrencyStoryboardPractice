@@ -53,22 +53,22 @@ class MainCollectionViewData {
         
         
         //========Coin=======
-        arrayOfCoins.append(CurrencyModel(currencyIcon: UIImage(named: ""), fullCurrencyTitle: "Azadi", currencyTitle: "", previousRate: "11", upToDateRate: "11"))
-        arrayOfCoins.append(CurrencyModel(currencyIcon: UIImage(named: ""), fullCurrencyTitle: "Emami", currencyTitle: "", previousRate: "22", upToDateRate: "22"))
-        arrayOfCoins.append(CurrencyModel(currencyIcon: UIImage(named: ""), fullCurrencyTitle: "%Azadi", currencyTitle: "", previousRate: "33", upToDateRate: "33"))
-        arrayOfCoins.append(CurrencyModel(currencyIcon: UIImage(named: ""), fullCurrencyTitle: "%Azadi", currencyTitle: "", previousRate: "44", upToDateRate: "44"))
-        arrayOfCoins.append(CurrencyModel(currencyIcon: UIImage(named: ""), fullCurrencyTitle: "Geramy", currencyTitle: "", previousRate: "55", upToDateRate: "55"))
+        arrayOfCoins.append(CurrencyModel(currencyIcon: UIImage(named: ""), fullCurrencyTitle: "Azadi".localized(), currencyTitle: "", previousRate: "11", upToDateRate: "11"))
+        arrayOfCoins.append(CurrencyModel(currencyIcon: UIImage(named: ""), fullCurrencyTitle: "Emami".localized(), currencyTitle: "", previousRate: "22", upToDateRate: "22"))
+        arrayOfCoins.append(CurrencyModel(currencyIcon: UIImage(named: ""), fullCurrencyTitle: "%Azadi".localized(), currencyTitle: "", previousRate: "33", upToDateRate: "33"))
+        arrayOfCoins.append(CurrencyModel(currencyIcon: UIImage(named: ""), fullCurrencyTitle: "%Azadi".localized(), currencyTitle: "", previousRate: "44", upToDateRate: "44"))
+        arrayOfCoins.append(CurrencyModel(currencyIcon: UIImage(named: ""), fullCurrencyTitle: "Gerami".localized(), currencyTitle: "", previousRate: "55", upToDateRate: "55"))
         
         //=======Gold========
-        arrayOfGold.append(CurrencyModel(currencyIcon: UIImage(named: ""), fullCurrencyTitle: "Gram", currencyTitle: "", previousRate: "111", upToDateRate: "11"))
-        arrayOfGold.append(CurrencyModel(currencyIcon: UIImage(named: ""), fullCurrencyTitle: "MythQal", currencyTitle: "", previousRate: "222", upToDateRate: "222"))
+        arrayOfGold.append(CurrencyModel(currencyIcon: UIImage(named: ""), fullCurrencyTitle: "Gram".localized(), currencyTitle: "", previousRate: "111", upToDateRate: "11"))
+        arrayOfGold.append(CurrencyModel(currencyIcon: UIImage(named: ""), fullCurrencyTitle: "Mithqal".localized(), currencyTitle: "", previousRate: "222", upToDateRate: "222"))
         
         
         
         return [
-            (IndexTitle(icon: UIImage(named: "currencies"), title: "Currencies"), arrayOfCurrencies),
-            (IndexTitle(icon: UIImage(named: "coins"), title: "Coins"), arrayOfCoins),
-            (IndexTitle(icon: UIImage(named: "gold"), title: "Gold"), arrayOfGold)
+            (IndexTitle(icon: UIImage(named: "currencies"), title: "Currencies".localized()), arrayOfCurrencies),
+            (IndexTitle(icon: UIImage(named: "coins"), title: "Coins".localized()), arrayOfCoins),
+            (IndexTitle(icon: UIImage(named: "gold"), title: "Gold".localized()), arrayOfGold)
         
         ]
         
