@@ -13,7 +13,6 @@ class MainCollectionViewCell : UICollectionViewCell{
     //abave
     lazy var currencyIconImage: BaseUIImageView = {
         let iv = BaseUIImageView()
-        //iv.image = UIImage(named: "profileImage")
         iv.heightAnchor.constraint(equalToConstant: 30).isActive = true
         iv.widthAnchor.constraint(equalToConstant: 40).isActive = true
         return iv
@@ -21,7 +20,6 @@ class MainCollectionViewCell : UICollectionViewCell{
 
     lazy var fullCurrencyTitle: BaseUILabel = {
         let label = BaseUILabel()
-        //label.text = "User Name"
         label.textColor = UIColor.black
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 15)
@@ -30,7 +28,6 @@ class MainCollectionViewCell : UICollectionViewCell{
     
     lazy var currencyTitle: BaseUILabel = {
         let label = BaseUILabel()
-        //label.text = "User Name"
         label.textColor = UIColor.black
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 15)
@@ -127,6 +124,7 @@ class MainCollectionViewCell : UICollectionViewCell{
            // belowStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             
         ])
+
     }
     
     

@@ -1,0 +1,29 @@
+
+
+//========index
+"Currencies" = "通貨";
+"Coins" = "コイン";
+"Gold" = "金";
+
+
+
+
+//=======currency
+//currencies
+
+
+//Coin
+"Azadi" = "アザディー";
+"Emami" = "エマミー";
+"%Azadi" = "アザディー";
+"%Azadi" = "アザディー";
+"Gerami" = "ジェラミ";
+
+//Gold
+"Gram" = "グラム";
+"Mithqal" = "ミスカール";
+
+
+
+
+
