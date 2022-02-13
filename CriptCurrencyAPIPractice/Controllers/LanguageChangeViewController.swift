@@ -40,31 +40,45 @@ class LanguageChangeViewController: UIViewController {
         ])
         
         
-        print("count: \(data)")
+        print("count1: \(data)")
+//        tableView.reloadData()
         
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
+//        tableView.reloadData()
     }
 
 }
 
 
+
+
 extension LanguageChangeViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        data[indexPath.row].isComplete.toggle()
-        tableView.reloadData()
-        
         let index = data[indexPath.row].title
-        if index == "Englsih"{
-            
-        }else if index == "Japanses"{
-            
+        print("index: \(index)")
+        for _ in data {
+            if index == "English"{
+                print("+++++++++++++++++++++++")
+                data[indexPath.row].isComplete = true
+                data[1].isComplete = false
+                print("title1:\(data[indexPath.row].title)")
+                print("isComplete1:\(data[indexPath.row].isComplete)")
+                print("+++++++++++++++++++++++")
+            }else if index == "Japanese"{
+                print("=======================")
+                data[indexPath.row].isComplete = true
+                data[0].isComplete = false
+                print("title2: :\(data[indexPath.row].title )")
+                print("isComplete2:\(data[indexPath.row].isComplete)")
+                print("=======================")
+            }
+
         }
-            
+        tableView.reloadData()
     }
 }
 
