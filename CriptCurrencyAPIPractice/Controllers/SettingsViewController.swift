@@ -51,11 +51,54 @@ class SettingsViewController: UIViewController {
 extension SettingsViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        
-        data[indexPath.section].1[indexPath.row].isComplete.toggle()
-        tableView.reloadData()
-        
         let index = data[indexPath.section].1[indexPath.row].title
+        print("index: \(index)")
+        
+        for _ in data {
+            if index == "All"{
+                print("+++++++++++++++++++++++")
+                data[indexPath.section].1[indexPath.row].isComplete = true
+                data[indexPath.section].1[1].isComplete = false
+                data[indexPath.section].1[2].isComplete = false
+                data[indexPath.section].1[3].isComplete = false
+                print("title1:\(data[indexPath.section].1[indexPath.row].title)")
+                print("isComplete1:\(data[indexPath.section].1[indexPath.row].isComplete)")
+                print("+++++++++++++++++++++++")
+            }else if index == "Currencies"{
+                print("=======================")
+                data[indexPath.section].1[indexPath.row].isComplete = true
+                data[indexPath.section].1[0].isComplete = false
+                data[indexPath.section].1[2].isComplete = false
+                data[indexPath.section].1[3].isComplete = false
+                print("title2: :\(data[indexPath.section].1[indexPath.row].title )")
+                print("isComplete2:\(data[indexPath.section].1[indexPath.row].isComplete)")
+                print("=======================")
+            }else if index == "Coins"{
+                print("=======================")
+                data[indexPath.section].1[indexPath.row].isComplete = true
+                data[indexPath.section].1[0].isComplete = false
+                data[indexPath.section].1[1].isComplete = false
+                data[indexPath.section].1[3].isComplete = false
+                print("title2: :\(data[indexPath.section].1[indexPath.row].title )")
+                print("isComplete2:\(data[indexPath.section].1[indexPath.row].isComplete)")
+                print("=======================")
+            }else if index == "Gold"{
+                print("=======================")
+                data[indexPath.section].1[indexPath.row].isComplete = true
+                data[indexPath.section].1[0].isComplete = false
+                data[indexPath.section].1[1].isComplete = false
+                data[indexPath.section].1[2].isComplete = false
+                print("title2: :\(data[indexPath.section].1[indexPath.row].title )")
+                print("isComplete2:\(data[indexPath.section].1[indexPath.row].isComplete)")
+                print("=======================")
+            }
+
+        }
+        tableView.reloadData()
+  
+        
+        
+        
         if index == "All"{
             let vc = ViewController()
             self.navigationController?.pushViewController(vc, animated: true)
