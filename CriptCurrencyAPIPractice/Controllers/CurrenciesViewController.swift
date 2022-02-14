@@ -15,11 +15,26 @@ class CurrenciesViewController: UIViewController, UICollectionViewDelegateFlowLa
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var settingButton: UIBarButtonItem!
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    //@IBOutlet weak var collectionView: UICollectionView!
     
     var data = MainCollectionViewData.dataProvider()
     var indextitle = "Currency"
 
+    lazy var collectionView: UICollectionView = {
+        
+        let viewLayout =  UICollectionViewFlowLayout()
+        viewLayout.scrollDirection = .vertical
+        viewLayout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: viewLayout)
+        cv.backgroundColor = .white
+        cv.delegate = self
+        cv.dataSource = self
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.backgroundColor = UIColor.systemGray5
+        return cv
+        
+    }()
+    
     
     
     //=================== Views ===============
@@ -29,29 +44,22 @@ class CurrenciesViewController: UIViewController, UICollectionViewDelegateFlowLa
         title = "Currencies"
 
     }
-
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         view.backgroundColor = UIColor.white
-       
-        guard collectionView != nil else{ return }
         view.addSubview(collectionView)
-        let viewLayout =  UICollectionViewFlowLayout()
-        viewLayout.scrollDirection = .vertical
-        viewLayout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
-        collectionView.collectionViewLayout = viewLayout
-        collectionView.backgroundColor = .yellow
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = UIColor.systemGray5
-
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(MainCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-
-        timeLabel.text = DateFormatters.dateForMatter(date: Date())
+            collectionView.delegate = self
+            collectionView.dataSource = self
+            collectionView.register(MainCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         
-        
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+            collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+
         
     }
     
@@ -65,7 +73,7 @@ class CurrenciesViewController: UIViewController, UICollectionViewDelegateFlowLa
         for i in data{
             print("i.0.title: \(i.0.title)")
             for j in i.1 {
-                if i.0.title == "Coins".localized(){
+                if i.0.title == "Currencies".localized(){
                     array.append(j.self)
                     print("Success: \(i.1)")
                 }
@@ -109,3 +117,35 @@ extension CurrenciesViewController : UICollectionViewDataSource {
 
 }
 
+
+
+
+
+
+
+
+
+//
+//override func viewWillAppear(_ animated: Bool) {
+//    super.viewWillAppear(animated)
+//    view.backgroundColor = UIColor.white
+//
+//    guard collectionView != nil else{ return }
+//    view.addSubview(collectionView)
+//    let viewLayout =  UICollectionViewFlowLayout()
+//    viewLayout.scrollDirection = .vertical
+//    viewLayout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+//    collectionView.collectionViewLayout = viewLayout
+//    collectionView.backgroundColor = .yellow
+//    collectionView.translatesAutoresizingMaskIntoConstraints = false
+//    collectionView.backgroundColor = UIColor.systemGray5
+//
+//    collectionView.delegate = self
+//    collectionView.dataSource = self
+//    collectionView.register(MainCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+//
+//    timeLabel.text = DateFormatters.dateForMatter(date: Date())
+//
+//
+//
+//}
