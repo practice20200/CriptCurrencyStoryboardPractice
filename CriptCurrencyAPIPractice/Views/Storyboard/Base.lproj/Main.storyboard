@@ -112,25 +112,26 @@
         <!--Coins View Controller-->
         <scene sceneID="fFI-IZ-hGX">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ut-kK-llx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="8IC-W8-hxg" customClass="CoinsViewController" customModule="CriptCurrencyAPIPractice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bga-Xz-hTi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ThK-KF-ZWP">
-                                <rect key="frame" x="20" y="108" width="42" height="21"/>
+                                <rect key="frame" x="20" y="160" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tK8-0X-pGE">
-                                <rect key="frame" x="352" y="108" width="42" height="21"/>
+                                <rect key="frame" x="352" y="160" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rbq-Jd-NQL">
-                                <rect key="frame" x="0.0" y="138" width="414" height="675"/>
+                                <rect key="frame" x="0.0" y="190" width="414" height="623"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2yB-tG-2FM">
                                     <size key="itemSize" width="128" height="128"/>
@@ -181,13 +182,13 @@
                         <outlet property="titleLabel" destination="ThK-KF-ZWP" id="YyQ-3j-ss7"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2ut-kK-llx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2620.289855072464" y="-465.40178571428567"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="B81-S4-OZR">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OXm-nD-sEn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="dge-dW-yT4" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="oLX-oR-ZTU">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -197,13 +198,13 @@
                         <segue destination="8IC-W8-hxg" kind="relationship" relationship="rootViewController" id="T9C-m5-kGB"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OXm-nD-sEn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3722" y="-465"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fZi-nX-fac">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XRI-PS-ekh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="36K-7Z-Dto" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="lzn-Yq-Bzr">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -213,13 +214,13 @@
                         <segue destination="rrM-fl-P0z" kind="relationship" relationship="rootViewController" id="wX2-BJ-IT3"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XRI-PS-ekh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3696" y="210"/>
         </scene>
         <!--Currencies-->
         <scene sceneID="qUx-u6-Pi0">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hrp-uG-Atx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="Wfh-Ld-3AZ" customClass="CurrenciesViewController" customModule="CriptCurrencyAPIPractice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pkx-wG-Ys7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -289,13 +290,13 @@
                         <outlet property="titleLabel" destination="V32-PH-lUV" id="2Rg-kx-FBU"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hrp-uG-Atx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2613.04347826087" y="-1140.4017857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RzX-Ub-MYd">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="btB-ie-eO3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="dI1-qZ-xtW" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="JxS-n5-dJy">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -305,13 +306,13 @@
                         <segue destination="Wfh-Ld-3AZ" kind="relationship" relationship="rootViewController" id="Lsc-li-hZB"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="btB-ie-eO3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3696" y="-1140"/>
         </scene>
         <!--Gold View Controller-->
         <scene sceneID="hFu-iv-Lfi">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sV6-Ol-uVr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="rrM-fl-P0z" customClass="GoldViewController" customModule="CriptCurrencyAPIPractice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U9M-xt-DT3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -381,7 +382,6 @@
                         <outlet property="titleLabel" destination="0wL-t2-FOo" id="3by-DB-yrN"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sV6-Ol-uVr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2618.840579710145" y="209.59821428571428"/>
         </scene>
