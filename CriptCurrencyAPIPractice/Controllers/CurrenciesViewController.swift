@@ -8,7 +8,7 @@
 import UIKit
 import Elements
 
-class √: UIViewController, UICollectionViewDelegateFlowLayout {
+class CurrenciesViewController: UIViewController, UICollectionViewDelegateFlowLayout {
     
     //=================== Elements ===============
     @IBOutlet weak var titleLabel: UILabel!
