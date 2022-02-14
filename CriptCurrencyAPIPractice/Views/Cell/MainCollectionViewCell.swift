@@ -14,7 +14,7 @@ class MainCollectionViewCell : UICollectionViewCell{
     lazy var currencyIconImage: BaseUIImageView = {
         let iv = BaseUIImageView()
         iv.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        iv.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        iv.widthAnchor.constraint(equalToConstant: 30).isActive = true
         return iv
     }()
 
