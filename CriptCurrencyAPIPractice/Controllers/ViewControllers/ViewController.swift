@@ -14,7 +14,6 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
     @IBOutlet weak var settings: UIBarButtonItem!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    
     @IBOutlet weak var collectionView: UICollectionView!
 
    
@@ -63,7 +62,10 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
         super.viewWillAppear(animated)
         view.backgroundColor = UIColor.white
        
-        guard collectionView != nil else{ return }
+        guard collectionView != nil else{
+            print("Here: error as well===============")
+            return }
+        print("Here: Successsssssss as well===============")
         view.addSubview(collectionView)
         let viewLayout =  UICollectionViewFlowLayout()
         viewLayout.scrollDirection = .vertical
