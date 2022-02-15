@@ -26,4 +26,19 @@
 
 
 
+//========== language
+"English" = "英語";
+"Japanese" = "日本語";
 
+
+
+//========== Settings
+"All" = "全部";
+"Currencies" = "通貨";
+"Coins" = "コイン";
+"Gold" = "金";
+"Change Language" = "言語変換";
+
+
+//=========Change Languale
+"Select a language" = "言語を選択してください";

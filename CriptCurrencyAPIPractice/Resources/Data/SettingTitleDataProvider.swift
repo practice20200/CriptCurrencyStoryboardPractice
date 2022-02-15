@@ -14,13 +14,13 @@ class SettingTitleDataProvider{
         var arrayOfLanguageSelection = [Setting]()
     
         //arrayCurrencyType
-        arrayCurrencyType.append(Setting(iconImage: UIImage(named: "all"), title: "All", isComplete: false))
-        arrayCurrencyType.append(Setting(iconImage: UIImage(named: "currencies"), title: "Currencies", isComplete: false))
-        arrayCurrencyType.append(Setting(iconImage: UIImage(named: "coins"), title: "Coins", isComplete: false))
-        arrayCurrencyType.append(Setting(iconImage: UIImage(named: "gold"), title: "Gold", isComplete: false))
+        arrayCurrencyType.append(Setting(iconImage: UIImage(named: "all"), title: "All".localized(), isComplete: false))
+        arrayCurrencyType.append(Setting(iconImage: UIImage(named: "currencies"), title: "Currencies".localized(), isComplete: false))
+        arrayCurrencyType.append(Setting(iconImage: UIImage(named: "coins"), title: "Coins".localized(), isComplete: false))
+        arrayCurrencyType.append(Setting(iconImage: UIImage(named: "gold"), title: "Gold".localized(), isComplete: false))
     
         //arrayOfLanguageSelection
-        arrayOfLanguageSelection.append(Setting(iconImage: UIImage(named: "changeLanguage"), title: "Change Language", isComplete: false))
+        arrayOfLanguageSelection.append(Setting(iconImage: UIImage(named: "changeLanguage"), title: "Change Language".localized(), isComplete: false))
     
         return [
             (" ", arrayCurrencyType),

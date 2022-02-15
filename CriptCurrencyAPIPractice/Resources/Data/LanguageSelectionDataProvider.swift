@@ -9,8 +9,8 @@ import UIKit
 class LanguageSelectionDataProvider{
     static func dataProvider() -> [LanguageSelection]{
         var array = [LanguageSelection]()
-        array.append(LanguageSelection(iconImage: UIImage(named: "english"), title: "English", isComplete: false))
-        array.append(LanguageSelection(iconImage: UIImage(named: "japanese"), title: "Japanese", isComplete: false))
+        array.append(LanguageSelection(iconImage: UIImage(named: "english"), title: "English".localized(), isComplete: false))
+        array.append(LanguageSelection(iconImage: UIImage(named: "japanese"), title: "Japanese".localized(), isComplete: false))
         return array
     }
 }

@@ -99,19 +99,19 @@ extension SettingsViewController : UITableViewDelegate {
         
         
         
-        if index == "All"{
+        if index == "All".localized(){
             let vc = ViewController()
             self.navigationController?.pushViewController(vc, animated: true)
-        }else if index == "Currencies"{
+        }else if index == "Currencies".localized(){
             let vc = CurrenciesViewController()
             self.navigationController?.pushViewController(vc, animated: true)
-        }else if index == "Coins"{
+        }else if index == "Coins".localized(){
             let vc = CoinsViewController()
             self.navigationController?.pushViewController(vc, animated: true)
-        }else if index == "Gold"{
+        }else if index == "Gold".localized(){
             let vc = GoldViewController()
             self.navigationController?.pushViewController(vc, animated: true)
-        }else if index == "Change Language"{
+        }else if index == "Change Language".localized(){
             let vc = LanguageChangeViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         }

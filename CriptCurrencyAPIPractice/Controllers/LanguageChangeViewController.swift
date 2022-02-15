@@ -24,7 +24,7 @@ class LanguageChangeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
-        title = "Select a language"
+        title = "Select a language".localized()
         tableView.delegate = self
         tableView.dataSource = self
         view.addSubview(tableView)
@@ -61,14 +61,14 @@ extension LanguageChangeViewController : UITableViewDelegate {
         let index = data[indexPath.row].title
         print("index: \(index)")
         for _ in data {
-            if index == "English"{
+            if index == "English".localized(){
                 print("+++++++++++++++++++++++")
                 data[indexPath.row].isComplete = true
                 data[1].isComplete = false
                 print("title1:\(data[indexPath.row].title)")
                 print("isComplete1:\(data[indexPath.row].isComplete)")
                 print("+++++++++++++++++++++++")
-            }else if index == "Japanese"{
+            }else if index == "Japanese".localized(){
                 print("=======================")
                 data[indexPath.row].isComplete = true
                 data[0].isComplete = false
