@@ -16,6 +16,10 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
 
+    static var btcPrice = ""
+    static var ethPrice = ""
+    static var usdPrice = ""
+    static var ausdPric = ""
    
     
     var data = MainCollectionViewData.dataProvider()
@@ -26,29 +30,19 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
 //    @IBOutlet weak var ausdPric: UILabel!
 //    @IBOutlet weak var lastUpdatePrice: UILabel!
 //
-//    let urlString =  "https://api.coingecko.com/api/v3/exchange_rates"
+    let urlString =  "https://api.coingecko.com/api/v3/exchange_rates"
 //
     
     
-    
-    
-    
-    
-    
-    
-    
-    //================ Viewa =================
+ 
+    //================ Views =================
     override func viewDidLoad() {
         super.viewDidLoad()
-//        fetchData()
-//
-//        let _ = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(refreshData), userInfo: nil, repeats: true)
-//
+        fetchData()
+        let _ = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(refreshData), userInfo: nil, repeats: true)
         
-        
-        
-
-        
+//        let vc = storyboard?.instantiateViewController(withIdentifier: "coinsVCID") as! CoinsViewController
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 //    override func viewDidLayoutSubviews() {
@@ -81,8 +75,6 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
         
         collectionView.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.identifier)
         
-        dateLabel.text = DateFormatters.dateForMatter(date: Date())
-        
     }
     
     
@@ -91,83 +83,49 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
         let vc = SettingsViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
-    
-    
-    
-//
-//    func fetchData(){
-//        guard let url = URL(string: urlString) else{ return }
-//        let defaultSession = URLSession(configuration: .default)
-//        let dataTask = defaultSession.dataTask(with: url){ (data: Data?, response: URLResponse?, error: Error?) in
-//
-////            guard let error != nil else{ return }
-//            //guard let data != nil else{ return }
-//
+ 
+    func fetchData(){
+        guard let url = URL(string: urlString) else{ return }
+        let defaultSession = URLSession(configuration: .default)
+        let dataTask = defaultSession.dataTask(with: url){ (data: Data?, response: URLResponse?, error: Error?) in
+
+//            guard let error != nil else{ return }
+//            guard let data != nil else{ return }
+
 //            if error != nil{ return }
-//
-//            do{
-//                let json = try JSONDecoder().decode(Rates.self, from: data!)
-//                self.setPrices(currency:  json.rates)
-//            }catch{
-//                print("erorr")
-//                return
-//            }
-//
-//        }
-//        dataTask.resume()
+
+            do{
+                let json = try JSONDecoder().decode(Rates.self, from: data!)
+                self.setPrices(currency:  json.rates)
+            }catch{
+                print("erorr")
+                return
+            }
+
+        }
+        dataTask.resume()
     
-    //    }
-//
-//
-//
-//
-//
-//    func setPrices(currency: Currency){
-//        DispatchQueue.main.async {
+    }
+
+    func setPrices(currency: Currency){
+        DispatchQueue.main.async {
 //            self.btcPrice.text = self.formatPrice(currency.btc)
 //            self.ethPrice.text = self.formatPrice(currency.eth)
 //            self.usdPrice.text = self.formatPrice(currency.usd)
 //            self.ausdPric.text = self.formatPrice(currency.aud)
-//            self.lastUpdatePrice.text = self.formatDate(date: Date())
-//        }
-//    }
-//
-//    func formatPrice(_ price: Price) -> String{
-//        return String(format: "%@ %.4f", price.unit, price.value)
-//    }
-//
-//    func formatDate(date: Date) -> String{
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "dd/MMM/yy HH:mm:ss"
-//        return formatter.string(from: date)
-//    }
-//
-//
-//    @objc func refreshData() -> Void{
-//        fetchData()
-//    }
+            self.dateLabel.text = DateFormatters.dateForMatter(date: Date())
+        }
+    }
+
+    func formatPrice(_ price: Price) -> String{
+        return String(format: "%@ %.4f", price.unit, price.value)
+    }
+
+    @objc func refreshData() -> Void{
+        fetchData()
+    }
 }
-//
-//
-//
-//struct Price: Codable{
-//    let name: String
-//    let unit: String
-//    let value: Float
-//    let type: String
-//}
-//
-//struct Currency : Codable{
-//    let btc: Price
-//    let eth: Price
-//    let usd: Price
-//    let aud: Price
-//}
-//
-//struct Rates: Codable{
-//    let rates: Currency
-//}
+
 
 
 extension ViewController : UICollectionViewDelegate {

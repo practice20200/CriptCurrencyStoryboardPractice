@@ -14,3 +14,21 @@ struct CurrencyModel {
     var previousRate : String
     var upToDateRate : String
 }
+
+struct Price: Codable{
+    let name: String
+    let unit: String
+    let value: Float
+    let type: String
+}
+
+struct Currency : Codable{
+    let btc: Price
+    let eth: Price
+    let usd: Price
+    let aud: Price
+}
+
+struct Rates: Codable{
+    let rates: Currency
+}
