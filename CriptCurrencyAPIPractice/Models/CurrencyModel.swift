@@ -23,10 +23,8 @@ struct Price: Codable{
 }
 
 struct Currency : Codable{
-    let btc: Price
-    let eth: Price
 
-
+    //Currencies
     //A
     let aed: Price
     let ars: Price
@@ -97,6 +95,16 @@ struct Currency : Codable{
     
     let bits: Price
     let sats: Price
+    
+    //Coins
+    let btc: Price
+    let eth: Price
+    let ltc: Price
+    let bch: Price
+    let bnb: Price
+    
+
+
     
 
 

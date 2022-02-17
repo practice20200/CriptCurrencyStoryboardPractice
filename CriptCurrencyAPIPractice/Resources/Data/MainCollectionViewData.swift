@@ -170,11 +170,12 @@ class MainCollectionViewData {
 //            var arrayOfCoins : [CurrencyModel] = []
 //            var arrayOfGold : [CurrencyModel] = []
         //========Coin=======
-        arrayOfCoins.append(CurrencyModel(currencyIcon: UIImage(named: "fullMoon"), fullCurrencyTitle: "Azadi".localized(), currencyTitle: "", previousRate: "11", upToDateRate: "11"))
-        arrayOfCoins.append(CurrencyModel(currencyIcon: UIImage(named: "bigCrescentMoon"), fullCurrencyTitle: "Emami".localized(), currencyTitle: "", previousRate: "22", upToDateRate: "22"))
-        arrayOfCoins.append(CurrencyModel(currencyIcon: UIImage(named: "halfMoon"), fullCurrencyTitle: "%Azadi".localized(), currencyTitle: "", previousRate: "33", upToDateRate: "33"))
-        arrayOfCoins.append(CurrencyModel(currencyIcon: UIImage(named: "smallCrescentMoon"), fullCurrencyTitle: "%Azadi".localized(), currencyTitle: "", previousRate: "44", upToDateRate: "44"))
-        arrayOfCoins.append(CurrencyModel(currencyIcon: UIImage(named: "newMoon"), fullCurrencyTitle: "Gerami".localized(), currencyTitle: "", previousRate: "55", upToDateRate: "55"))
+        arrayOfCoins.append(CurrencyModel(currencyIcon: UIImage(named: "fullMoon"), fullCurrencyTitle: "“Bitcoin”".localized(), currencyTitle: "BTC", previousRate: "11", upToDateRate: "11"))
+        arrayOfCoins.append(CurrencyModel(currencyIcon: UIImage(named: "bigCrescentMoon"), fullCurrencyTitle: "Ether".localized(), currencyTitle: "ETH", previousRate: "22", upToDateRate: "22"))
+        arrayOfCoins.append(CurrencyModel(currencyIcon: UIImage(named: "halfMoon"), fullCurrencyTitle: "“Bitcoin".localized(), currencyTitle: "LTC", previousRate: "33", upToDateRate: "33"))
+        arrayOfCoins.append(CurrencyModel(currencyIcon: UIImage(named: "smallCrescentMoon"), fullCurrencyTitle: "“Bitcoin".localized(), currencyTitle: "BCH", previousRate: "44", upToDateRate: "44"))
+        arrayOfCoins.append(CurrencyModel(currencyIcon: UIImage(named: "newMoon"), fullCurrencyTitle: "Binance".localized(), currencyTitle: "BNB", previousRate: "55", upToDateRate: "55"))
+
         
         //=======Gold========
         arrayOfGold.append(CurrencyModel(currencyIcon: UIImage(named: "gold"), fullCurrencyTitle: "Gram".localized(), currencyTitle: "", previousRate: "111", upToDateRate: "11"))
