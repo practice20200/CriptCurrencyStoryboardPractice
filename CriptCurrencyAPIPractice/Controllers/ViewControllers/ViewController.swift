@@ -17,9 +17,9 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
     @IBOutlet weak var collectionView: UICollectionView!
 
     static var btcPrice = ""
-    static var ethPrice = ""
+    static var gbpPrice = ""
     static var usdPrice = ""
-    static var ausdPric = ""
+    static var ausdPrice = ""
    
     
     var data = MainCollectionViewData.dataProvider()
@@ -85,12 +85,16 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
     }
  
     func fetchData(){
-        guard let url = URL(string: urlString) else{ return }
+        guard let url = URL(string: urlString) else { return }
         let defaultSession = URLSession(configuration: .default)
         let dataTask = defaultSession.dataTask(with: url){ (data: Data?, response: URLResponse?, error: Error?) in
 
-//            guard let error != nil else{ return }
-//            guard let data != nil else{ return }
+//            guard error != nil else{
+//                print("errorrrrrrrrrrrrr")
+//                return }
+//            guard data != nil else{
+//                print("nillllllllllllllll")
+//                return }
 
             if error != nil{ return }
 
@@ -113,12 +117,27 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
 //            self.ethPrice.text = self.formatPrice(currency.eth)
 //            self.usdPrice.text = self.formatPrice(currency.usd)
 //            self.ausdPric.text = self.formatPrice(currency.aud)
+            for i in self.data {
+                print("data\(i)")
+                for j in i.1{
+                    print("data\(j)")
+                    if j.currencyTitle == "USD"{
+                        ViewController.usdPrice =  self.formatPrice(currency.usd)
+                    }else if j.currencyTitle == "AUD"{
+                        ViewController.ausdPrice =  self.formatPrice(currency.aud)
+                    }else if j.currencyTitle == "GBP"{
+                        ViewController.gbpPrice =  self.formatPrice(currency.gbp)
+                    }
+               
+                }
+            }
+            
             self.dateLabel?.text = DateFormatters.dateForMatter(date: Date())
         }
     }
 
     func formatPrice(_ price: Price) -> String{
-        return String(format: "%@ %.4f", price.unit, price.value)
+        return String(format: "%@ %.0f", price.unit, price.value)
     }
 
     @objc func refreshData() -> Void{
@@ -150,9 +169,21 @@ extension ViewController : UICollectionViewDataSource {
         cell.currencyIconImage.image = item.currencyIcon
         cell.fullCurrencyTitle.text = item.fullCurrencyTitle
         cell.currencyTitle.text = item.currencyTitle
-        cell.previousRate.text = item.previousRate
-        cell.upToDateRate.text = item.upToDateRate
         
+         if cell.currencyTitle.text == "USD"{
+             cell.previousRate.text = ViewController.usdPrice
+             cell.upToDateRate.text = ViewController.usdPrice
+         }else if cell.currencyTitle.text == "AUD"{
+            cell.previousRate.text = ViewController.ausdPrice
+            cell.upToDateRate.text = ViewController.ausdPrice
+         }else if cell.currencyTitle.text == "GBP"{
+            cell.previousRate.text = ViewController.gbpPrice
+            cell.upToDateRate.text = ViewController.gbpPrice
+        }
+        else{
+            cell.previousRate.text = ViewController.usdPrice
+            cell.upToDateRate.text = ViewController.usdPrice
+        }
         return cell
     }
     
@@ -193,3 +224,15 @@ extension String{
                                  comment: self)
     }
 }
+
+
+
+//static func dataProvider() -> [Price] {
+//    var arrayOfCurrencies = [
+//                         aed, ars, aud, bdt, bhd, bmd, brl, cad, chf, clp, cny, czk, dkk, eur,
+//                         gbp, hkd, huf, idr, ils, inr, jpy, krw, lkr, mmk, mxn, myr, ngn, nok,
+//                         nzd, php, pkr, pln, rub, sar, sek, sgd, thb, twd, uah, vef, vnd, zar,
+//                         xdr, xag, xau ]
+//    return arrayOfCurrencies
+//
+//}

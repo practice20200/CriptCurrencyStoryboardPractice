@@ -29,23 +29,23 @@ class MainCollectionViewData {
                                    previousRate: "26400",
                                    upToDateRate: "100000"))
         arrayOfCurrencies.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
-                                   fullCurrencyTitle: "US Dollar",
-                                   currencyTitle: "USD",
+                                   fullCurrencyTitle: "Euro",
+                                   currencyTitle: "EUD",
                                    previousRate: "26400",
                                    upToDateRate: "26500"))
         arrayOfCurrencies.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
-                                   fullCurrencyTitle: "US Dollar",
-                                   currencyTitle: "USD",
+                                   fullCurrencyTitle: "British Pound",
+                                   currencyTitle: "GBP",
                                    previousRate: "26400",
                                    upToDateRate: "26500"))
         arrayOfCurrencies.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
-                                   fullCurrencyTitle: "US Dollar",
-                                   currencyTitle: "USD",
+                                   fullCurrencyTitle: "Swiss Franc",
+                                   currencyTitle: "CHF",
                                    previousRate: "26400",
                                    upToDateRate: "26500"))
         arrayOfCurrencies.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
-                                   fullCurrencyTitle: "US Dollar",
-                                   currencyTitle: "USD",
+                                   fullCurrencyTitle: "Australian Dollar",
+                                   currencyTitle: "AUD",
                                    previousRate: "26400",
                                    upToDateRate: "26500"))
         arrayOfCurrencies.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
@@ -164,8 +164,11 @@ class MainCollectionViewData {
                                    previousRate: "26400",
                                    upToDateRate: "26500"))
 
-        
-        
+//
+//        static func coinData() -> [ (IndexTitle, [CurrencyModel] ) ] {
+//            var arrayOfCurrencies : [CurrencyModel] = []
+//            var arrayOfCoins : [CurrencyModel] = []
+//            var arrayOfGold : [CurrencyModel] = []
         //========Coin=======
         arrayOfCoins.append(CurrencyModel(currencyIcon: UIImage(named: "fullMoon"), fullCurrencyTitle: "Azadi".localized(), currencyTitle: "", previousRate: "11", upToDateRate: "11"))
         arrayOfCoins.append(CurrencyModel(currencyIcon: UIImage(named: "bigCrescentMoon"), fullCurrencyTitle: "Emami".localized(), currencyTitle: "", previousRate: "22", upToDateRate: "22"))
@@ -187,5 +190,9 @@ class MainCollectionViewData {
         ]
         
     }
-}
+    
+//
+    
 
+    
+}
