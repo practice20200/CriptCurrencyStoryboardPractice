@@ -10,7 +10,6 @@ import UIKit
 class SettingsViewController: UIViewController {
     
     var data = SettingTitleDataProvider.dataProvider()
-
     
     lazy var tableView : UITableView = {
         let table = UITableView()
@@ -40,12 +39,15 @@ class SettingsViewController: UIViewController {
    
     }
     
+    //=================== Function ====================
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
     }
 
 
+    
 }
 
 extension SettingsViewController : UITableViewDelegate {

@@ -13,12 +13,12 @@ class CurrenciesViewController: UIViewController, UICollectionViewDelegateFlowLa
     //=================== Elements ===============
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var settingButton: UIBarButtonItem!
+
     
     //@IBOutlet weak var collectionView: UICollectionView!
-    
+
     var data = MainCollectionViewData.dataProvider()
-    var indextitle = "Currency"
+    
 
     lazy var collectionView: UICollectionView = {
         
@@ -59,14 +59,12 @@ class CurrenciesViewController: UIViewController, UICollectionViewDelegateFlowLa
             collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
-
+        
+        
         
     }
     
     //=================== Functions ===============
-    @IBAction func settingHandler(_ sender: Any) {
-        
-    }
     
     func coinInformationFinder() -> [CurrencyModel]{
         var array : [CurrencyModel] = []

@@ -79,6 +79,7 @@
                             </imageReference>
                             <connections>
                                 <action selector="settingHandler:" destination="BYZ-38-t0r" id="egG-Gh-YdN"/>
+                                <segue destination="rBs-Xo-1yu" kind="show" id="XXv-b8-6sM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -94,20 +95,75 @@
             </objects>
             <point key="canvasLocation" x="939.13043478260875" y="65.625"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Settings-->
         <scene sceneID="lCv-47-zEa">
             <objects>
                 <viewController id="rBs-Xo-1yu" customClass="SettingsViewController" customModule="CriptCurrencyAPIPractice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Kl-Kd-wR5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dWX-xM-JMN">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="PXK-ui-2eT">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PXK-ui-2eT" id="uIQ-AU-inB">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="vRj-U8-hc7">
+                                        <rect key="frame" x="0.0" y="88" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vRj-U8-hc7" id="aOe-MV-ZMv">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="oW1-Ux-SIO">
+                                        <rect key="frame" x="0.0" y="131.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oW1-Ux-SIO" id="5Ap-bt-cIx">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="34t-z7-yiP">
+                                        <rect key="frame" x="0.0" y="175" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="34t-z7-yiP" id="FMC-Yf-Z5S">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="xOp-hD-77e">
+                                        <rect key="frame" x="0.0" y="218.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xOp-hD-77e" id="cgw-Y0-xbt">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ryg-ad-Seb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dWX-xM-JMN" firstAttribute="top" secondItem="ryg-ad-Seb" secondAttribute="top" id="XcA-yd-gJl"/>
+                            <constraint firstItem="ryg-ad-Seb" firstAttribute="bottom" secondItem="dWX-xM-JMN" secondAttribute="bottom" id="juZ-ZE-OoJ"/>
+                            <constraint firstItem="dWX-xM-JMN" firstAttribute="leading" secondItem="ryg-ad-Seb" secondAttribute="leading" id="mLm-8M-y4c"/>
+                            <constraint firstItem="ryg-ad-Seb" firstAttribute="trailing" secondItem="dWX-xM-JMN" secondAttribute="trailing" id="zQG-aA-BrD"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Settings" id="it5-jI-Per"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H5p-zR-Kz2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1770" y="-856"/>
+            <point key="canvasLocation" x="1735" y="60"/>
         </scene>
         <!--Coins View Controller-->
         <scene sceneID="fFI-IZ-hGX">
@@ -220,7 +276,7 @@
         <!--Currencies-->
         <scene sceneID="qUx-u6-Pi0">
             <objects>
-                <viewController id="Wfh-Ld-3AZ" customClass="CurrenciesViewController" customModule="CriptCurrencyAPIPractice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Currencies" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Wfh-Ld-3AZ" customClass="CurrenciesViewController" customModule="CriptCurrencyAPIPractice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pkx-wG-Ys7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -275,23 +331,19 @@
                             <constraint firstItem="crB-WA-uGf" firstAttribute="leading" secondItem="J25-gR-bly" secondAttribute="leading" id="sTE-Qx-sxd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Currencies" id="kmx-ZI-AQ4">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="Ayt-Vb-NC4">
-                            <connections>
-                                <action selector="settingHandler:" destination="Wfh-Ld-3AZ" id="cRK-ty-fIx"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Currencies" id="kmx-ZI-AQ4"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="currencies" value=""/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="collectionView" destination="crB-WA-uGf" id="xD7-vc-gjW"/>
-                        <outlet property="settingButton" destination="Ayt-Vb-NC4" id="dg7-6t-HKy"/>
                         <outlet property="timeLabel" destination="nHw-wA-PxX" id="H5S-Te-hUp"/>
                         <outlet property="titleLabel" destination="V32-PH-lUV" id="2Rg-kx-FBU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hrp-uG-Atx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2613.04347826087" y="-1140.4017857142856"/>
+            <point key="canvasLocation" x="3339" y="-1130"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RzX-Ub-MYd">
@@ -417,7 +469,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qEb-AO-Ywk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="36" y="-6"/>
+            <point key="canvasLocation" x="54" y="-13"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hGo-S7-ayI">

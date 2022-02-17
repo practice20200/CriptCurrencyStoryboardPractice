@@ -1,0 +1,42 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "0lp-Un-XcB"; */
+"0lp-Un-XcB.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "0wL-t2-FOo"; */
+"0wL-t2-FOo.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "3nE-aN-99a"; */
+"3nE-aN-99a.title" = "Item";
+
+/* Class = "UINavigationItem"; title = "Chand"; ObjectID = "4PC-5m-EX6"; */
+"4PC-5m-EX6.title" = "Chand";
+
+/* Class = "UILabel"; text = "2022 Oct. 23"; ObjectID = "5hb-i3-cEh"; */
+"5hb-i3-cEh.text" = "2022 Oct. 23";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ThK-KF-ZWP"; */
+"ThK-KF-ZWP.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "V32-PH-lUV"; */
+"V32-PH-lUV.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "it5-jI-Per"; */
+"it5-jI-Per.title" = "Settings";
+
+/* Class = "UINavigationItem"; title = "Currencies"; ObjectID = "kmx-ZI-AQ4"; */
+"kmx-ZI-AQ4.title" = "Currencies";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "nHw-wA-PxX"; */
+"nHw-wA-PxX.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "tK8-0X-pGE"; */
+"tK8-0X-pGE.text" = "Label";
+
+/* Class = "UILabel"; text = "currency"; ObjectID = "wPR-Y0-YN1"; */
+"wPR-Y0-YN1.text" = "currency";
+
+/* Class = "UINavigationItem"; title = "Change Language"; ObjectID = "x2I-y7-I6C"; */
+"x2I-y7-I6C.title" = "Change Language";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "xD0-Nu-ARP"; */
+"xD0-Nu-ARP.title" = "Item";

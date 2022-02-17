@@ -37,6 +37,7 @@
 		B311CF1327B8ED5D00A44043 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		B311CF1727B8EDF000A44043 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B311CF1927B8EDF600A44043 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B3185C2027BE356300330F66 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		B34BF21027B72124004BF3DA /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		B34BF21327B72212004BF3DA /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
 		B34BF21527B72396004BF3DA /* SettingTitleDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTitleDataProvider.swift; sourceTree = "<group>"; };
@@ -320,6 +321,7 @@
 			children = (
 				B3E02AE827AC82B000ADA9F4 /* Base */,
 				B311CF1327B8ED5D00A44043 /* ja */,
+				B3185C2027BE356300330F66 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

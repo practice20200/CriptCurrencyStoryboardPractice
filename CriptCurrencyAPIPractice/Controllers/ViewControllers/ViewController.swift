@@ -92,7 +92,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
 //            guard let error != nil else{ return }
 //            guard let data != nil else{ return }
 
-//            if error != nil{ return }
+            if error != nil{ return }
 
             do{
                 let json = try JSONDecoder().decode(Rates.self, from: data!)
@@ -113,7 +113,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
 //            self.ethPrice.text = self.formatPrice(currency.eth)
 //            self.usdPrice.text = self.formatPrice(currency.usd)
 //            self.ausdPric.text = self.formatPrice(currency.aud)
-            self.dateLabel.text = DateFormatters.dateForMatter(date: Date())
+            self.dateLabel?.text = DateFormatters.dateForMatter(date: Date())
         }
     }
 
