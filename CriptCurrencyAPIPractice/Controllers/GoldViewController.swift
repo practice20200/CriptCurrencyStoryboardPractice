@@ -13,6 +13,7 @@ class GoldViewController: UIViewController,UICollectionViewDelegateFlowLayout {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var settingButton: UIBarButtonItem!
+    let urlString =  "https://api.coingecko.com/api/v3/exchange_rates"
   //  @IBOutlet weak var collectionView: UICollectionView!
     var data = MainCollectionViewData.dataProvider()
     var indextitle = "Gold"
@@ -80,6 +81,57 @@ class GoldViewController: UIViewController,UICollectionViewDelegateFlowLayout {
         print("array: \(array)")
         return  array
     }
+    
+    func fetchData(){
+        guard let url = URL(string: urlString) else { return }
+        let defaultSession = URLSession(configuration: .default)
+        let dataTask = defaultSession.dataTask(with: url){ (data: Data?, response: URLResponse?, error: Error?) in
+
+            if error != nil{ return }
+
+            do{
+                let json = try JSONDecoder().decode(Rates.self, from: data!)
+                self.setPrices(currency:  json.rates)
+            }catch{
+                print("erorr")
+                return
+            }
+
+        }
+        dataTask.resume()
+    
+    }
+    
+    
+    func setPrices(currency: Currency){
+        DispatchQueue.main.async {
+            for i in self.data {
+                print("data\(i)")
+                for j in i.1{
+                    print("data\(j)")
+                    //Coins
+                     if j.currencyTitle == "XAG"{
+                        ViewController.xagPrice =  self.formatPrice(currency.xag)
+                    }else if j.currencyTitle == "XAU"{
+                        ViewController.xauPrice =  self.formatPrice(currency.xau)
+                    }
+                }
+            }
+            self.dateLabel?.text = DateFormatters.dateForMatter(date: Date())
+        }
+            
+    }
+    
+    func formatPrice(_ price: Price) -> String{
+        return String(format: "%@ %.0f", price.unit, price.value)
+    }
+
+    @objc func refreshData() -> Void{
+        fetchData()
+    }
+
+    
+    
 }
 
 
@@ -100,8 +152,14 @@ extension GoldViewController : UICollectionViewDataSource {
         cell.currencyIconImage.image = item.currencyIcon
         cell.fullCurrencyTitle.text = item.fullCurrencyTitle
         cell.currencyTitle.text = item.currencyTitle
-        cell.previousRate.text = item.previousRate
-        cell.upToDateRate.text = item.upToDateRate
+
+        if cell.currencyTitle.text == "XAG"{
+            cell.previousRate.text = ViewController.xagPrice
+            cell.upToDateRate.text = ViewController.xagPrice
+        }else if cell.currencyTitle.text == "XAU"{
+            cell.previousRate.text = ViewController.xauPrice
+            cell.upToDateRate.text = ViewController.xauPrice
+        }
         
         return cell
     }

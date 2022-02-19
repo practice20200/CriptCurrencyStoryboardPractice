@@ -33,6 +33,9 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
     static var bchPrice = ""
     static var bnbdPrice = ""
     
+    //Gold
+    static var xagPrice = ""
+    static var xauPrice = ""
    
     var data = MainCollectionViewData.dataProvider()
     var indextitle = ["Currency", "Coins", "Gold"]
@@ -143,6 +146,13 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
                         ViewController.bnbdPrice =  self.formatPrice(currency.bnb)
                     }
                     
+                    //Gold
+                    else if j.currencyTitle == "XAG"{
+                        ViewController.xagPrice =  self.formatPrice(currency.xag)
+                    }else if j.currencyTitle == "XAU"{
+                        ViewController.xauPrice =  self.formatPrice(currency.xau)
+                    }
+                    
                 }
             }
             
@@ -229,12 +239,14 @@ extension ViewController : UICollectionViewDataSource {
             cell.upToDateRate.text = ViewController.bnbdPrice
         }
         
-        
-        
-        else{
-            cell.previousRate.text = ViewController.usdPrice
-            cell.upToDateRate.text = ViewController.usdPrice
+        else if cell.currencyTitle.text == "XAG"{
+            cell.previousRate.text = ViewController.xagPrice
+            cell.upToDateRate.text = ViewController.xagPrice
+        }else if cell.currencyTitle.text == "XAU"{
+            cell.previousRate.text = ViewController.xauPrice
+            cell.upToDateRate.text = ViewController.xauPrice
         }
+    
         return cell
     }
     

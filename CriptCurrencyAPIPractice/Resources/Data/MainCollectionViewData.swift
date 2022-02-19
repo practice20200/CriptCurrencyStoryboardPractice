@@ -74,8 +74,8 @@ class MainCollectionViewData {
 
         
         //=======Gold========
-        arrayOfGold.append(CurrencyModel(currencyIcon: UIImage(named: "gold"), fullCurrencyTitle: "Gram".localized(), currencyTitle: "", previousRate: "111", upToDateRate: "11"))
-        arrayOfGold.append(CurrencyModel(currencyIcon: UIImage(named: "gold"), fullCurrencyTitle: "Mithqal".localized(), currencyTitle: "", previousRate: "222", upToDateRate: "222"))
+        arrayOfGold.append(CurrencyModel(currencyIcon: UIImage(named: "gold"), fullCurrencyTitle: "Silver".localized(), currencyTitle: "XAG", previousRate: "Silver", upToDateRate: "11"))
+        arrayOfGold.append(CurrencyModel(currencyIcon: UIImage(named: "gold"), fullCurrencyTitle: "Gold".localized(), currencyTitle: "XAU", previousRate: "222", upToDateRate: "222"))
         
         
         
@@ -87,9 +87,5 @@ class MainCollectionViewData {
         ]
         
     }
-    
-//
-    
-
-    
+  
 }
