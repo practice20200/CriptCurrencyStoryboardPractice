@@ -107,8 +107,8 @@ extension GoldViewController : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let height = (collectionView.frame.height * 1/4)
-        let width = (collectionView.frame.width * 1/2)-30
+        let height = (collectionView.frame.height * 1/3)+20
+        let width = (collectionView.frame.width * 1/2)-25
         return CGSize(width: width, height: height)
     }
 }

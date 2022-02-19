@@ -13,7 +13,16 @@ class CoinsViewController: UIViewController, UICollectionViewDelegateFlowLayout 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var settingButton: UIBarButtonItem!
+    let urlString =  "https://api.coingecko.com/api/v3/exchange_rates"
 //    @IBOutlet weak var collectionView: UICollectionView!
+    //Coins
+    static var btcPrice = ""
+    static var ethdPrice = ""
+    static var ltcPrice = ""
+    static var bchPrice = ""
+    static var bnbdPrice = ""
+    
+    
     var data = MainCollectionViewData.dataProvider()
     var indextitle = "Coins"
     
@@ -80,6 +89,61 @@ class CoinsViewController: UIViewController, UICollectionViewDelegateFlowLayout 
         return  array
     }
     
+    func fetchData(){
+        guard let url = URL(string: urlString) else { return }
+        let defaultSession = URLSession(configuration: .default)
+        let dataTask = defaultSession.dataTask(with: url){ (data: Data?, response: URLResponse?, error: Error?) in
+
+            if error != nil{ return }
+
+            do{
+                let json = try JSONDecoder().decode(Rates.self, from: data!)
+                self.setPrices(currency:  json.rates)
+            }catch{
+                print("erorr")
+                return
+            }
+
+        }
+        dataTask.resume()
+    
+    }
+    
+    
+    func setPrices(currency: Currency){
+        DispatchQueue.main.async {
+            for i in self.data {
+                print("data\(i)")
+                for j in i.1{
+                    print("data\(j)")
+                    //Coins
+                    if j.currencyTitle == "BTC"{
+                        ViewController.btcPrice =  self.formatPrice(currency.btc)
+                    }else if j.currencyTitle == "ETH"{
+                        ViewController.ethdPrice =  self.formatPrice(currency.eth)
+                    }else if j.currencyTitle == "LTC"{
+                        ViewController.ltcPrice =  self.formatPrice(currency.ltc)
+                    }else if j.currencyTitle == "BCH"{
+                        ViewController.bchPrice =  self.formatPrice(currency.bch)
+                    }else if j.currencyTitle == "BNB"{
+                        ViewController.bnbdPrice =  self.formatPrice(currency.bnb)
+                    }
+                }
+            }
+            self.dateLabel?.text = DateFormatters.dateForMatter(date: Date())
+        }
+            
+    }
+    
+    func formatPrice(_ price: Price) -> String{
+        return String(format: "%@ %.0f", price.unit, price.value)
+    }
+
+    @objc func refreshData() -> Void{
+        fetchData()
+    }
+
+    
 }
 
 
@@ -100,15 +164,31 @@ extension CoinsViewController : UICollectionViewDataSource {
         cell.currencyIconImage.image = item.currencyIcon
         cell.fullCurrencyTitle.text = item.fullCurrencyTitle
         cell.currencyTitle.text = item.currencyTitle
-        cell.previousRate.text = item.previousRate
-        cell.upToDateRate.text = item.upToDateRate
+        
+        if cell.currencyTitle.text == "BTC"{
+            cell.previousRate.text = ViewController.btcPrice
+            cell.upToDateRate.text = ViewController.btcPrice
+        }else if cell.currencyTitle.text == "ETH"{
+            cell.previousRate.text = ViewController.ethdPrice
+            cell.upToDateRate.text = ViewController.ethdPrice
+        }else if cell.currencyTitle.text == "LTC"{
+            cell.previousRate.text = ViewController.ltcPrice
+            cell.upToDateRate.text = ViewController.ltcPrice
+        }else if cell.currencyTitle.text == "BCH"{
+            cell.previousRate.text = ViewController.bchPrice
+            cell.upToDateRate.text = ViewController.bchPrice
+        }else if cell.currencyTitle.text == "BNB"{
+            cell.previousRate.text = ViewController.bnbdPrice
+            cell.upToDateRate.text = ViewController.bnbdPrice
+        }
+        
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let height = (collectionView.frame.height * 1/4)
-        let width = (collectionView.frame.width * 1/2)-30
+        let height = (collectionView.frame.height * 1/3)+20
+        let width = (collectionView.frame.width * 1/2)-25
         return CGSize(width: width, height: height)
     }
 }

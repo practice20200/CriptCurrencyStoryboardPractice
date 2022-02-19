@@ -15,10 +15,17 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
-
-    static var gbpPrice = ""
+//Currency
     static var usdPrice = ""
-    static var ausdPrice = ""
+    static var eurPrice = ""
+    static var gbpPrice = ""
+    static var chfPrice = ""
+    static var caddPrice = ""
+    static var audPrice = ""
+    static var sekPrice = ""
+    static var nokPrice = ""
+    static var rubPrice = ""
+    
     //Coins
     static var btcPrice = ""
     static var ethdPrice = ""
@@ -82,13 +89,6 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
         let defaultSession = URLSession(configuration: .default)
         let dataTask = defaultSession.dataTask(with: url){ (data: Data?, response: URLResponse?, error: Error?) in
 
-//            guard error != nil else{
-//                print("errorrrrrrrrrrrrr")
-//                return }
-//            guard data != nil else{
-//                print("nillllllllllllllll")
-//                return }
-
             if error != nil{ return }
 
             do{
@@ -112,12 +112,23 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
                     print("data\(j)")
                     if j.currencyTitle == "USD"{
                         ViewController.usdPrice =  self.formatPrice(currency.usd)
-                    }else if j.currencyTitle == "AUD"{
-                        ViewController.ausdPrice =  self.formatPrice(currency.aud)
+                    }else if j.currencyTitle == "EUR"{
+                        ViewController.eurPrice =  self.formatPrice(currency.eur)
                     }else if j.currencyTitle == "GBP"{
                         ViewController.gbpPrice =  self.formatPrice(currency.gbp)
+                    }else if j.currencyTitle == "CHF"{
+                        ViewController.chfPrice =  self.formatPrice(currency.chf)
+                    }else if j.currencyTitle == "CAD"{
+                        ViewController.caddPrice =  self.formatPrice(currency.cad)
+                    }else if j.currencyTitle == "AUD"{
+                        ViewController.audPrice =  self.formatPrice(currency.aud)
+                    }else if j.currencyTitle == "SEK"{
+                        ViewController.sekPrice =  self.formatPrice(currency.sek)
+                    }else if j.currencyTitle == "NOK"{
+                        ViewController.nokPrice =  self.formatPrice(currency.nok)
+                    }else if j.currencyTitle == "RUB"{
+                        ViewController.rubPrice =  self.formatPrice(currency.rub)
                     }
-                    
                     
                     //Coins
                     else if j.currencyTitle == "BTC"{
@@ -177,14 +188,28 @@ extension ViewController : UICollectionViewDataSource {
          if cell.currencyTitle.text == "USD"{
              cell.previousRate.text = ViewController.usdPrice
              cell.upToDateRate.text = ViewController.usdPrice
-         }else if cell.currencyTitle.text == "AUD"{
-            cell.previousRate.text = ViewController.ausdPrice
-            cell.upToDateRate.text = ViewController.ausdPrice
+         }else if cell.currencyTitle.text == "EUR"{
+            cell.previousRate.text = ViewController.eurPrice
+            cell.upToDateRate.text = ViewController.eurPrice
          }else if cell.currencyTitle.text == "GBP"{
             cell.previousRate.text = ViewController.gbpPrice
             cell.upToDateRate.text = ViewController.gbpPrice
+        }else if cell.currencyTitle.text == "CHF"{
+            cell.previousRate.text = ViewController.chfPrice
+            cell.upToDateRate.text = ViewController.chfPrice
+        }else if cell.currencyTitle.text == "AUD"{
+            cell.previousRate.text = ViewController.audPrice
+            cell.upToDateRate.text = ViewController.audPrice
+        }else if cell.currencyTitle.text == "SEK"{
+            cell.previousRate.text = ViewController.sekPrice
+            cell.upToDateRate.text = ViewController.sekPrice
+        }else if cell.currencyTitle.text == "NOK"{
+            cell.previousRate.text = ViewController.nokPrice
+            cell.upToDateRate.text = ViewController.nokPrice
+        }else if cell.currencyTitle.text == "GBP"{
+            cell.previousRate.text = ViewController.gbpPrice
+            cell.upToDateRate.text = ViewController.gbpPrice
         }
-        
         
         //Coins
         else if cell.currencyTitle.text == "BTC"{
@@ -214,8 +239,8 @@ extension ViewController : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let height = (collectionView.frame.height * 1/4)
-        let width = (collectionView.frame.width * 1/2)-30
+        let height = (collectionView.frame.height * 1/3)+20
+        let width = (collectionView.frame.width * 1/2)-25
         return CGSize(width: width, height: height)
     }
 

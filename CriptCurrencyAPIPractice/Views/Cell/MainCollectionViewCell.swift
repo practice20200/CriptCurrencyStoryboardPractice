@@ -22,7 +22,8 @@ class MainCollectionViewCell : UICollectionViewCell{
         let label = BaseUILabel()
         label.textColor = UIColor.black
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 15)
+        label.font = UIFont.systemFont(ofSize: 13)
+        label.numberOfLines = 2
         return label
     }()
     
@@ -30,7 +31,7 @@ class MainCollectionViewCell : UICollectionViewCell{
         let label = BaseUILabel()
         label.textColor = UIColor.black
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 15)
+        label.font = UIFont.systemFont(ofSize: 13)
         return label
     }()
     
@@ -39,7 +40,7 @@ class MainCollectionViewCell : UICollectionViewCell{
         let stack = VStack()
         stack.addArrangedSubview(fullCurrencyTitle)
         stack.addArrangedSubview(currencyTitle)
-        stack.spacing = 10
+        stack.spacing = 5
         return stack
     }()
     
@@ -70,7 +71,7 @@ class MainCollectionViewCell : UICollectionViewCell{
        // label.text = "User Name"
         label.textColor = UIColor.black
         label.textAlignment = .center
-        label.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+        label.font = UIFont.systemFont(ofSize: 22)
         return label
     }()
     
@@ -117,7 +118,8 @@ class MainCollectionViewCell : UICollectionViewCell{
             currencyIconImage.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: 20),
           
             dollarTitleStack.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: 20),
-            dollarTitleStack.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            dollarTitleStack.leadingAnchor.constraint(equalTo: currencyIconImage.safeAreaLayoutGuide.trailingAnchor, constant: 10),
+            dollarTitleStack.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor, constant: -10),
             
             belowStack.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             belowStack.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)

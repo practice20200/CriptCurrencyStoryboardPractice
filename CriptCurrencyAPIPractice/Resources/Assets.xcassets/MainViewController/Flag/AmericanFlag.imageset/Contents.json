@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "pexels-karolina-grabowska-4386429.jpg",
+      "filename" : "icons8-アメリカ合衆国-48.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "icons8-アメリカ合衆国-49.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "icons8-アメリカ合衆国-50.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

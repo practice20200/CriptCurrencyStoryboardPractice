@@ -21,7 +21,7 @@ class MainCollectionViewData {
         var arrayOfCoins : [CurrencyModel] = []
         var arrayOfGold : [CurrencyModel] = []
         
-        
+       
         //=====Currency
         arrayOfCurrencies.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
                                    fullCurrencyTitle: "US Dollar",
@@ -30,7 +30,7 @@ class MainCollectionViewData {
                                    upToDateRate: "100000"))
         arrayOfCurrencies.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
                                    fullCurrencyTitle: "Euro",
-                                   currencyTitle: "EUD",
+                                   currencyTitle: "EUR",
                                    previousRate: "26400",
                                    upToDateRate: "26500"))
         arrayOfCurrencies.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
@@ -44,131 +44,27 @@ class MainCollectionViewData {
                                    previousRate: "26400",
                                    upToDateRate: "26500"))
         arrayOfCurrencies.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
+                                   fullCurrencyTitle: "Canadian Dollar",
+                                   currencyTitle: "CAD",
+                                   previousRate: "26400",
+                                   upToDateRate: "26500"))
+        arrayOfCurrencies.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
                                    fullCurrencyTitle: "Australian Dollar",
                                    currencyTitle: "AUD",
                                    previousRate: "26400",
-                                   upToDateRate: "26500"))
-        arrayOfCurrencies.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
-                                   fullCurrencyTitle: "US Dollar",
-                                   currencyTitle: "USD",
-                                   previousRate: "26400",
                                    upToDateRate: "100000"))
         arrayOfCurrencies.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
-                                   fullCurrencyTitle: "US Dollar",
-                                   currencyTitle: "USD",
+                                   fullCurrencyTitle: "Norwegian Krone",
+                                   currencyTitle: "NOK",
                                    previousRate: "26400",
                                    upToDateRate: "26500"))
         arrayOfCurrencies.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
-                                   fullCurrencyTitle: "US Dollar",
-                                   currencyTitle: "USD",
+                                   fullCurrencyTitle: "Russian Ruble",
+                                   currencyTitle: "RUB",
                                    previousRate: "26400",
                                    upToDateRate: "26500"))
-        arrayOfCurrencies.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
-                                   fullCurrencyTitle: "US Dollar",
-                                   currencyTitle: "USD",
-                                   previousRate: "26400",
-                                   upToDateRate: "26500"))
-        arrayOfCurrencies.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
-                                   fullCurrencyTitle: "US Dollar",
-                                   currencyTitle: "USD",
-                                   previousRate: "26400",
-                                   upToDateRate: "26500"))
-        arrayOfCurrencies.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
-                                   fullCurrencyTitle: "US Dollar",
-                                   currencyTitle: "USD",
-                                   previousRate: "26400",
-                                   upToDateRate: "100000"))
-        arrayOfCurrencies.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
-                                   fullCurrencyTitle: "US Dollar",
-                                   currencyTitle: "USD",
-                                   previousRate: "26400",
-                                   upToDateRate: "26500"))
-        arrayOfCurrencies.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
-                                   fullCurrencyTitle: "US Dollar",
-                                   currencyTitle: "USD",
-                                   previousRate: "26400",
-                                   upToDateRate: "26500"))
-        arrayOfCurrencies.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
-                                   fullCurrencyTitle: "US Dollar",
-                                   currencyTitle: "USD",
-                                   previousRate: "26400",
-                                   upToDateRate: "26500"))
-        arrayOfCurrencies.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
-                                   fullCurrencyTitle: "US Dollar",
-                                   currencyTitle: "USD",
-                                   previousRate: "26400",
-                                   upToDateRate: "26500"))
-        arrayOfCurrencies.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
-                                   fullCurrencyTitle: "US Dollar",
-                                   currencyTitle: "USD",
-                                   previousRate: "26400",
-                                   upToDateRate: "100000"))
-        arrayOfCurrencies.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
-                                   fullCurrencyTitle: "US Dollar",
-                                   currencyTitle: "USD",
-                                   previousRate: "26400",
-                                   upToDateRate: "26500"))
-        arrayOfCurrencies.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
-                                   fullCurrencyTitle: "US Dollar",
-                                   currencyTitle: "USD",
-                                   previousRate: "26400",
-                                   upToDateRate: "26500"))
-        arrayOfCurrencies.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
-                                   fullCurrencyTitle: "US Dollar",
-                                   currencyTitle: "USD",
-                                   previousRate: "26400",
-                                   upToDateRate: "26500"))
-        arrayOfCurrencies.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
-                                   fullCurrencyTitle: "US Dollar",
-                                   currencyTitle: "USD",
-                                   previousRate: "26400",
-                                   upToDateRate: "26500"))
-        arrayOfCurrencies.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
-                                   fullCurrencyTitle: "US Dollar",
-                                   currencyTitle: "USD",
-                                   previousRate: "26400",
-                                   upToDateRate: "100000"))
-        arrayOfCurrencies.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
-                                   fullCurrencyTitle: "US Dollar",
-                                   currencyTitle: "USD",
-                                   previousRate: "26400",
-                                   upToDateRate: "26500"))
-        arrayOfCurrencies.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
-                                   fullCurrencyTitle: "US Dollar",
-                                   currencyTitle: "USD",
-                                   previousRate: "26400",
-                                   upToDateRate: "26500"))
-        arrayOfCurrencies.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
-                                   fullCurrencyTitle: "US Dollar",
-                                   currencyTitle: "USD",
-                                   previousRate: "26400",
-                                   upToDateRate: "26500"))
-        arrayOfCurrencies.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
-                                   fullCurrencyTitle: "US Dollar",
-                                   currencyTitle: "USD",
-                                   previousRate: "26400",
-                                   upToDateRate: "26500"))
-        arrayOfCurrencies.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
-                                   fullCurrencyTitle: "US Dollar",
-                                   currencyTitle: "USD",
-                                   previousRate: "26400",
-                                   upToDateRate: "100000"))
-        arrayOfCurrencies.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
-                                   fullCurrencyTitle: "US Dollar",
-                                   currencyTitle: "USD",
-                                   previousRate: "26400",
-                                   upToDateRate: "26500"))
-        arrayOfCurrencies.append(CurrencyModel(currencyIcon: UIImage(named: "AmericanFlag"),
-                                   fullCurrencyTitle: "US Dollar",
-                                   currencyTitle: "USD",
-                                   previousRate: "26400",
-                                   upToDateRate: "26500"))
+       
 
-//
-//        static func coinData() -> [ (IndexTitle, [CurrencyModel] ) ] {
-//            var arrayOfCurrencies : [CurrencyModel] = []
-//            var arrayOfCoins : [CurrencyModel] = []
-//            var arrayOfGold : [CurrencyModel] = []
         //========Coin=======
         arrayOfCoins.append(CurrencyModel(currencyIcon: UIImage(named: "fullMoon"), fullCurrencyTitle: "“Bitcoin”".localized(), currencyTitle: "BTC", previousRate: "11", upToDateRate: "11"))
         arrayOfCoins.append(CurrencyModel(currencyIcon: UIImage(named: "bigCrescentMoon"), fullCurrencyTitle: "Ether".localized(), currencyTitle: "ETH", previousRate: "22", upToDateRate: "22"))
