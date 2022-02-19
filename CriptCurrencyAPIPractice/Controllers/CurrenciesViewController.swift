@@ -53,7 +53,7 @@ class CurrenciesViewController: UIViewController, UICollectionViewDelegateFlowLa
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
-        title = "Currencies"
+        title = "Currencies".localized()
 
     }
     

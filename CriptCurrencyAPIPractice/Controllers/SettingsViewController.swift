@@ -21,6 +21,7 @@ class SettingsViewController: UIViewController {
     }()
 
     override func viewDidLoad() {
+        title = "Settings".localized()
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         tableView.delegate = self

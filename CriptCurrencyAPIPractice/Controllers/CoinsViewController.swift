@@ -24,7 +24,7 @@ class CoinsViewController: UIViewController, UICollectionViewDelegateFlowLayout 
     
     
     var data = MainCollectionViewData.dataProvider()
-    var indextitle = "Coins"
+    var indextitle = "Coins".localized()
     
     lazy var collectionView: UICollectionView = {
         

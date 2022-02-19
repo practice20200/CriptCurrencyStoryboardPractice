@@ -39,7 +39,7 @@ class GoldViewController: UIViewController,UICollectionViewDelegateFlowLayout {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
-        title = "Gold"
+        title = "Gold".localized()
     }
     
     override func viewWillAppear(_ animated: Bool) {
