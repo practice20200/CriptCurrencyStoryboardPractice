@@ -104,7 +104,7 @@ extension SettingsViewController : UITableViewDelegate {
         
         if index == "All".localized(){
             let vc = ViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.popViewController(animated: true)
         }else if index == "Currencies".localized(){
             let vc = CurrenciesViewController()
             self.navigationController?.pushViewController(vc, animated: true)
