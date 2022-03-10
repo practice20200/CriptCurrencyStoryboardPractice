@@ -8,7 +8,13 @@
 import UIKit
 import Elements
 
+protocol MainCollectionViewCellDelegate : AnyObject{
+    func refreshAPIHandler()
+}
+
 class MainCollectionViewCell : UICollectionViewCell{
+    var delegate : MainCollectionViewCellDelegate?
+    
     
     //abave
     lazy var currencyIconImage: BaseUIImageView = {
@@ -48,9 +54,6 @@ class MainCollectionViewCell : UICollectionViewCell{
         let stack = HStack()
         stack.addArrangedSubview(currencyIconImage)
         stack.addArrangedSubview(dollarTitleStack)
-
-        //stack.spacing = 50
-
         return stack
     }()
 
@@ -102,7 +105,10 @@ class MainCollectionViewCell : UICollectionViewCell{
         setUpView()
     }
 
-    
+    override func select(_ sender: Any?) {
+        super.select(sender)
+        delegate?.refreshAPIHandler()
+    }
 
 
     func setUpView(){
@@ -126,8 +132,7 @@ class MainCollectionViewCell : UICollectionViewCell{
            // belowStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             
         ])
+        
 
     }
-    
-    
 }

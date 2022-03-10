@@ -25,6 +25,7 @@
 		B3CA009827B5C53D000B548C /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CA009727B5C53D000B548C /* CurrencyModel.swift */; };
 		B3CA009B27B5CC05000B548C /* Elements in Frameworks */ = {isa = PBXBuildFile; productRef = B3CA009A27B5CC05000B548C /* Elements */; };
 		B3CBCD7B27C08DC40073BC6B /* CurrencyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CBCD7A27C08DC40073BC6B /* CurrencyData.swift */; };
+		B3D2B5EC27DA795200AD9CFA /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D2B5EB27DA795200AD9CFA /* Extension.swift */; };
 		B3E02AE227AC82B000ADA9F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E02AE127AC82B000ADA9F4 /* AppDelegate.swift */; };
 		B3E02AE427AC82B000ADA9F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E02AE327AC82B000ADA9F4 /* SceneDelegate.swift */; };
 		B3E02AE627AC82B000ADA9F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E02AE527AC82B000ADA9F4 /* ViewController.swift */; };
@@ -55,6 +56,7 @@
 		B3CA009527B5C4C6000B548C /* MainCollectionViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewData.swift; sourceTree = "<group>"; };
 		B3CA009727B5C53D000B548C /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
 		B3CBCD7A27C08DC40073BC6B /* CurrencyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyData.swift; sourceTree = "<group>"; };
+		B3D2B5EB27DA795200AD9CFA /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		B3E02ADE27AC82B000ADA9F4 /* CriptCurrencyAPIPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CriptCurrencyAPIPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E02AE127AC82B000ADA9F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3E02AE327AC82B000ADA9F4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				B3C5FCCF27B74BB900223256 /* DateFormatters.swift */,
+				B3D2B5EB27DA795200AD9CFA /* Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				B3CA008727B5B0C3000B548C /* CurrenciesViewController.swift in Sources */,
 				B34BF21127B72124004BF3DA /* SettingTableViewCell.swift in Sources */,
 				B3C5FCD427B753EE00223256 /* LanguageSelectionDataProvider.swift in Sources */,
+				B3D2B5EC27DA795200AD9CFA /* Extension.swift in Sources */,
 				B34BF21427B72212004BF3DA /* SettingModel.swift in Sources */,
 				B3C5FCD627B7544400223256 /* LanguageSelection.swift in Sources */,
 				B3C5FCD227B7516400223256 /* SelectLanguageTableViewCell.swift in Sources */,

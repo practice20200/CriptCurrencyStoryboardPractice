@@ -8,7 +8,7 @@
 import UIKit
 import Elements
 
-class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
+class ViewController: UIViewController, UICollectionViewDelegateFlowLayout{
     
     //================ Elements =================
     @IBOutlet weak var settings: UIBarButtonItem!
@@ -60,9 +60,9 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
         view.backgroundColor = UIColor.white
        
         guard collectionView != nil else{
-            print("Here: error as well===============")
+            print("Here: error===============")
             return }
-        print("Here: Successsssssss as well===============")
+        print("Here: Success===============")
         view.addSubview(collectionView)
         let viewLayout =  UICollectionViewFlowLayout()
         viewLayout.scrollDirection = .vertical
@@ -77,7 +77,11 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
         collectionView.register(MainCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         
         collectionView.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.identifier)
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        fetchData()
     }
     
     
@@ -101,10 +105,8 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
                 print("erorr")
                 return
             }
-
         }
         dataTask.resume()
-    
     }
 
     func setPrices(currency: Currency){
@@ -168,6 +170,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
     @objc func refreshData() -> Void{
         fetchData()
     }
+    
 }
 
 
@@ -194,6 +197,7 @@ extension ViewController : UICollectionViewDataSource {
         cell.currencyIconImage.image = item.currencyIcon
         cell.fullCurrencyTitle.text = item.fullCurrencyTitle
         cell.currencyTitle.text = item.currencyTitle
+        cell.delegate = self
         
          if cell.currencyTitle.text == "USD"{
              cell.previousRate.text = ViewController.usdPrice
@@ -246,7 +250,7 @@ extension ViewController : UICollectionViewDataSource {
             cell.previousRate.text = ViewController.xauPrice
             cell.upToDateRate.text = ViewController.xauPrice
         }
-    
+        
         return cell
     }
     
@@ -274,28 +278,15 @@ extension ViewController : UICollectionViewDataSource {
         return CGSize(width: 100, height: 20)
     }
     
-    
 }
 
 
-extension String{
-    func localized() -> String{
-        return NSLocalizedString(self,
-                                 tableName: "Localizable",
-                                 bundle: .main,
-                                 value: self,
-                                 comment: self)
+
+
+extension ViewController : MainCollectionViewCellDelegate {
+    func refreshAPIHandler(){
+        fetchData()
+
     }
 }
 
-
-
-//static func dataProvider() -> [Price] {
-//    var arrayOfCurrencies = [
-//                         aed, ars, aud, bdt, bhd, bmd, brl, cad, chf, clp, cny, czk, dkk, eur,
-//                         gbp, hkd, huf, idr, ils, inr, jpy, krw, lkr, mmk, mxn, myr, ngn, nok,
-//                         nzd, php, pkr, pln, rub, sar, sek, sgd, thb, twd, uah, vef, vnd, zar,
-//                         xdr, xag, xau ]
-//    return arrayOfCurrencies
-//
-//}
