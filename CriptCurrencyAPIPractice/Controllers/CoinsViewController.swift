@@ -147,8 +147,12 @@ class CoinsViewController: UIViewController, UICollectionViewDelegateFlowLayout 
     @objc func refreshData() -> Void{
         fetchData()
     }
+}
 
-    
+extension CoinsViewController : MainCollectionViewCellDelegate {
+    func refreshAPIHandler(){
+        refreshData()
+    }
 }
 
 
@@ -170,6 +174,7 @@ extension CoinsViewController : UICollectionViewDataSource {
         cell.fullCurrencyTitle.text = item.fullCurrencyTitle.localized()
         cell.currencyTitle.text = item.currencyTitle.localized()
         
+        cell.delegate = self
         if cell.currencyTitle.text == "BTC"{
             cell.previousRate.text = ViewController.btcPrice
             cell.upToDateRate.text = ViewController.btcPrice
@@ -197,6 +202,7 @@ extension CoinsViewController : UICollectionViewDataSource {
         return CGSize(width: width, height: height)
     }
 }
+
 
 
 

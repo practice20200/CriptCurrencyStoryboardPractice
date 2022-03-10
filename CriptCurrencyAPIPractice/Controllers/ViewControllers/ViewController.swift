@@ -154,7 +154,6 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout{
                     }else if j.currencyTitle == "XAU"{
                         ViewController.xauPrice =  self.formatPrice(currency.xau)
                     }
-                    
                 }
             }
             

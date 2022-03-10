@@ -180,7 +180,7 @@ extension CurrenciesViewController : UICollectionViewDataSource {
         cell.fullCurrencyTitle.text = item.fullCurrencyTitle.localized()
         cell.currencyTitle.text = item.currencyTitle.localized()
         
-//        cell.delegate = self
+        cell.delegate = self
          if cell.currencyTitle.text == "USD"{
              cell.previousRate.text = ViewController.usdPrice
              cell.upToDateRate.text = ViewController.usdPrice
@@ -221,7 +221,7 @@ extension CurrenciesViewController : UICollectionViewDataSource {
 
 extension CurrenciesViewController : MainCollectionViewCellDelegate{
     func refreshAPIHandler() {
-        fetchData()
+        refreshData()
     }
 }
 

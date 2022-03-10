@@ -66,10 +66,10 @@ class MainCollectionViewData {
        
 
         //========Coin=======
-        arrayOfCoins.append(CurrencyModel(currencyIcon: UIImage(named: "fullMoon"), fullCurrencyTitle: "“Bitcoin”", currencyTitle: "BTC", previousRate: "11", upToDateRate: "11"))
+        arrayOfCoins.append(CurrencyModel(currencyIcon: UIImage(named: "fullMoon"), fullCurrencyTitle: "Bitcoin", currencyTitle: "BTC", previousRate: "11", upToDateRate: "11"))
         arrayOfCoins.append(CurrencyModel(currencyIcon: UIImage(named: "bigCrescentMoon"), fullCurrencyTitle: "Ether", currencyTitle: "ETH", previousRate: "22", upToDateRate: "22"))
-        arrayOfCoins.append(CurrencyModel(currencyIcon: UIImage(named: "halfMoon"), fullCurrencyTitle: "“Bitcoin", currencyTitle: "LTC", previousRate: "33", upToDateRate: "33"))
-        arrayOfCoins.append(CurrencyModel(currencyIcon: UIImage(named: "smallCrescentMoon"), fullCurrencyTitle: "“Bitcoin", currencyTitle: "BCH", previousRate: "44", upToDateRate: "44"))
+        arrayOfCoins.append(CurrencyModel(currencyIcon: UIImage(named: "halfMoon"), fullCurrencyTitle: "Bitcoin", currencyTitle: "LTC", previousRate: "33", upToDateRate: "33"))
+        arrayOfCoins.append(CurrencyModel(currencyIcon: UIImage(named: "smallCrescentMoon"), fullCurrencyTitle: "Bitcoin", currencyTitle: "BCH", previousRate: "44", upToDateRate: "44"))
         arrayOfCoins.append(CurrencyModel(currencyIcon: UIImage(named: "newMoon"), fullCurrencyTitle: "Binance", currencyTitle: "BNB", previousRate: "55", upToDateRate: "55"))
 
         

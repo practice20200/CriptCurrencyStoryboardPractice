@@ -132,8 +132,12 @@ class GoldViewController: UIViewController,UICollectionViewDelegateFlowLayout {
         fetchData()
     }
 
-    
-    
+}
+
+extension GoldViewController : MainCollectionViewCellDelegate {
+    func refreshAPIHandler(){
+        refreshData()
+    }
 }
 
 
@@ -150,6 +154,7 @@ extension GoldViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MainCollectionViewCell
         
+        cell.delegate = self
         let item = coinInformationFinder()[indexPath.row]
         cell.currencyIconImage.image = item.currencyIcon
         cell.fullCurrencyTitle.text = item.fullCurrencyTitle.localized()
