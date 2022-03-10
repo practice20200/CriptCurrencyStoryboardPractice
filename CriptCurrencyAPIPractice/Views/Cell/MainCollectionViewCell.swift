@@ -9,12 +9,12 @@ import UIKit
 import Elements
 
 protocol MainCollectionViewCellDelegate : AnyObject{
-    func refreshAPIHandler(data: CurrencyModel)
+    func refreshAPIHandler()
 }
 
 class MainCollectionViewCell : UICollectionViewCell{
     var delegate : MainCollectionViewCellDelegate?
-    var models = [CurrencyModel]()
+    var models = MainCollectionViewData.dataProvider()
     
     //abave
     lazy var currencyIconImage: BaseUIImageView = {
@@ -107,7 +107,7 @@ class MainCollectionViewCell : UICollectionViewCell{
 
     override func select(_ sender: Any?) {
         super.select(sender)
-        delegate?.refreshAPIHandler(data: CurrencyModel)
+        delegate?.refreshAPIHandler()
     }
 
 

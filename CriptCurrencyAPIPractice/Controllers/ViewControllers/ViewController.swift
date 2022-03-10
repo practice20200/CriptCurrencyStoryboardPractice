@@ -159,6 +159,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout{
             }
             
             self.dateLabel?.text = DateFormatters.dateForMatter(date: Date())
+            self.collectionView.reloadData()
         }
             
     }
@@ -197,8 +198,8 @@ extension ViewController : UICollectionViewDataSource {
         cell.currencyIconImage.image = item.currencyIcon
         cell.fullCurrencyTitle.text = item.fullCurrencyTitle
         cell.currencyTitle.text = item.currencyTitle
-        cell.delegate = self
         
+        cell.delegate = self
          if cell.currencyTitle.text == "USD"{
              cell.previousRate.text = ViewController.usdPrice
              cell.upToDateRate.text = ViewController.usdPrice
