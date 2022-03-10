@@ -196,8 +196,8 @@ extension ViewController : UICollectionViewDataSource {
         
         let item = data[indexPath.section].1[indexPath.row]
         cell.currencyIconImage.image = item.currencyIcon
-        cell.fullCurrencyTitle.text = item.fullCurrencyTitle
-        cell.currencyTitle.text = item.currencyTitle
+        cell.fullCurrencyTitle.text = item.fullCurrencyTitle.localized()
+        cell.currencyTitle.text = item.currencyTitle.localized()
         
         cell.delegate = self
          if cell.currencyTitle.text == "USD"{
@@ -287,7 +287,6 @@ extension ViewController : UICollectionViewDataSource {
 extension ViewController : MainCollectionViewCellDelegate {
     func refreshAPIHandler(){
         fetchData()
-
     }
 }
 

@@ -46,7 +46,7 @@ class CoinsViewController: UIViewController, UICollectionViewDelegateFlowLayout 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
-        title = "Coins"
+        title = "Coins".localized()
 
     }
     
@@ -64,9 +64,14 @@ class CoinsViewController: UIViewController, UICollectionViewDelegateFlowLayout 
             collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
-
-        
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        fetchData()
+    }
+    
+    
     
     
     
@@ -162,7 +167,7 @@ extension CoinsViewController : UICollectionViewDataSource {
         
         let item = coinInformationFinder()[indexPath.row]
         cell.currencyIconImage.image = item.currencyIcon
-        cell.fullCurrencyTitle.text = item.fullCurrencyTitle
+        cell.fullCurrencyTitle.text = item.fullCurrencyTitle.localized()
         cell.currencyTitle.text = item.currencyTitle
         
         if cell.currencyTitle.text == "BTC"{

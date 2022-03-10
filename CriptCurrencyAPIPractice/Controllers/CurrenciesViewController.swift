@@ -71,8 +71,17 @@ class CurrenciesViewController: UIViewController, UICollectionViewDelegateFlowLa
             collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
-
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        fetchData()
+    }
+    
+    
+    
+    
+    
     
     //=================== Functions ===============
         func coinInformationFinder() -> [CurrencyModel]{
@@ -107,7 +116,6 @@ class CurrenciesViewController: UIViewController, UICollectionViewDelegateFlowLa
                 print("erorr")
                 return
             }
-
         }
         dataTask.resume()
     
@@ -140,8 +148,8 @@ class CurrenciesViewController: UIViewController, UICollectionViewDelegateFlowLa
                     }
                 }
                 self.timeLabel?.text = DateFormatters.dateForMatter(date: Date())
+                self.collectionView.reloadData()
             }
-                
         }
     }
     func formatPrice(_ price: Price) -> String{
@@ -169,9 +177,10 @@ extension CurrenciesViewController : UICollectionViewDataSource {
         
         let item = coinInformationFinder()[indexPath.row]
         cell.currencyIconImage.image = item.currencyIcon
-        cell.fullCurrencyTitle.text = item.fullCurrencyTitle
+        cell.fullCurrencyTitle.text = item.fullCurrencyTitle.localized()
         cell.currencyTitle.text = item.currencyTitle
         
+//        cell.delegate = self
          if cell.currencyTitle.text == "USD"{
              cell.previousRate.text = ViewController.usdPrice
              cell.upToDateRate.text = ViewController.usdPrice
@@ -210,8 +219,11 @@ extension CurrenciesViewController : UICollectionViewDataSource {
 
 }
 
-
-
+extension CurrenciesViewController : MainCollectionViewCellDelegate{
+    func refreshAPIHandler() {
+        fetchData()
+    }
+}
 
 
 

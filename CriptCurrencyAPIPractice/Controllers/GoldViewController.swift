@@ -58,6 +58,10 @@ class GoldViewController: UIViewController,UICollectionViewDelegateFlowLayout {
         ])
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        fetchData()
+    }
     
     
     
@@ -150,7 +154,7 @@ extension GoldViewController : UICollectionViewDataSource {
         
         let item = coinInformationFinder()[indexPath.row]
         cell.currencyIconImage.image = item.currencyIcon
-        cell.fullCurrencyTitle.text = item.fullCurrencyTitle
+        cell.fullCurrencyTitle.text = item.fullCurrencyTitle.localized()
         cell.currencyTitle.text = item.currencyTitle
 
         if cell.currencyTitle.text == "XAG"{
