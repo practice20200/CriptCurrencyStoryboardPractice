@@ -76,7 +76,7 @@ class GoldViewController: UIViewController,UICollectionViewDelegateFlowLayout {
         for i in data{
             print("i.0.title: \(i.0.title)")
             for j in i.1 {
-                if i.0.title == "Gold".localized(){
+                if i.0.title == "Gold"{
                     array.append(j.self)
                     print("Success: \(i.1)")
                 }
@@ -100,10 +100,8 @@ class GoldViewController: UIViewController,UICollectionViewDelegateFlowLayout {
                 print("erorr")
                 return
             }
-
         }
         dataTask.resume()
-    
     }
     
     
@@ -155,7 +153,7 @@ extension GoldViewController : UICollectionViewDataSource {
         let item = coinInformationFinder()[indexPath.row]
         cell.currencyIconImage.image = item.currencyIcon
         cell.fullCurrencyTitle.text = item.fullCurrencyTitle.localized()
-        cell.currencyTitle.text = item.currencyTitle
+        cell.currencyTitle.text = item.currencyTitle.localized()
 
         if cell.currencyTitle.text == "XAG"{
             cell.previousRate.text = ViewController.xagPrice

@@ -89,7 +89,7 @@ class CurrenciesViewController: UIViewController, UICollectionViewDelegateFlowLa
             for i in data{
                 print("i.0.title: \(i.0.title)")
                 for j in i.1 {
-                    if i.0.title == "Currencies".localized(){
+                    if i.0.title == "Currencies"{
                         array.append(j.self)
                         print("Success: \(i.1)")
                     }
@@ -178,7 +178,7 @@ extension CurrenciesViewController : UICollectionViewDataSource {
         let item = coinInformationFinder()[indexPath.row]
         cell.currencyIconImage.image = item.currencyIcon
         cell.fullCurrencyTitle.text = item.fullCurrencyTitle.localized()
-        cell.currencyTitle.text = item.currencyTitle
+        cell.currencyTitle.text = item.currencyTitle.localized()
         
 //        cell.delegate = self
          if cell.currencyTitle.text == "USD"{

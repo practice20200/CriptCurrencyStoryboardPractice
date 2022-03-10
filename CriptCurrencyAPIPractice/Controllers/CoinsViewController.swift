@@ -84,7 +84,7 @@ class CoinsViewController: UIViewController, UICollectionViewDelegateFlowLayout 
         for i in data{
             print("i.0.title: \(i.0.title)")
             for j in i.1 {
-                if i.0.title == "Coins".localized(){
+                if i.0.title == "Coins"{
                     array.append(j.self)
                     print("Success: \(i.1)")
                 }
@@ -168,7 +168,7 @@ extension CoinsViewController : UICollectionViewDataSource {
         let item = coinInformationFinder()[indexPath.row]
         cell.currencyIconImage.image = item.currencyIcon
         cell.fullCurrencyTitle.text = item.fullCurrencyTitle.localized()
-        cell.currencyTitle.text = item.currencyTitle
+        cell.currencyTitle.text = item.currencyTitle.localized()
         
         if cell.currencyTitle.text == "BTC"{
             cell.previousRate.text = ViewController.btcPrice
