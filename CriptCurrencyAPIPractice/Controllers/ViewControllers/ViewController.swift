@@ -16,26 +16,26 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout{
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
 //Currency
-    static var usdPrice = ""
-    static var eurPrice = ""
-    static var gbpPrice = ""
-    static var chfPrice = ""
-    static var caddPrice = ""
-    static var audPrice = ""
-    static var sekPrice = ""
-    static var nokPrice = ""
-    static var rubPrice = ""
+    var usdPrice = ""
+    var eurPrice = ""
+    var gbpPrice = ""
+    var chfPrice = ""
+    var caddPrice = ""
+    var audPrice = ""
+    var sekPrice = ""
+    var nokPrice = ""
+    var rubPrice = ""
     
     //Coins
-    static var btcPrice = ""
-    static var ethdPrice = ""
-    static var ltcPrice = ""
-    static var bchPrice = ""
-    static var bnbdPrice = ""
+    var btcPrice = ""
+    var ethdPrice = ""
+    var ltcPrice = ""
+    var bchPrice = ""
+    var bnbdPrice = ""
     
     //Gold
-    static var xagPrice = ""
-    static var xauPrice = ""
+    var xagPrice = ""
+    var xauPrice = ""
    
     var data = MainCollectionViewData.dataProvider()
     var indextitle = ["Currency", "Coins", "Gold"]
@@ -46,6 +46,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout{
     //================ Views =================
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("1")
         fetchData()
         let _ = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(refreshData), userInfo: nil, repeats: true)
         
@@ -81,7 +82,8 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout{
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        fetchData()
+        print("2")
+//        fetchData()
     }
     
     
@@ -110,49 +112,50 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout{
     }
 
     func setPrices(currency: Currency){
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            
             for i in self.data {
                 print("data\(i)")
                 for j in i.1{
                     print("data\(j)")
+                    
                     if j.currencyTitle == "USD"{
-                        ViewController.usdPrice =  self.formatPrice(currency.usd)
+                        self.usdPrice =  self.formatPrice(currency.usd)
                     }else if j.currencyTitle == "EUR"{
-                        ViewController.eurPrice =  self.formatPrice(currency.eur)
+                        self.eurPrice =  self.formatPrice(currency.eur)
                     }else if j.currencyTitle == "GBP"{
-                        ViewController.gbpPrice =  self.formatPrice(currency.gbp)
+                        self.gbpPrice =  self.formatPrice(currency.gbp)
                     }else if j.currencyTitle == "CHF"{
-                        ViewController.chfPrice =  self.formatPrice(currency.chf)
+                        self.chfPrice =  self.formatPrice(currency.chf)
                     }else if j.currencyTitle == "CAD"{
-                        ViewController.caddPrice =  self.formatPrice(currency.cad)
+                        self.caddPrice =  self.formatPrice(currency.cad)
                     }else if j.currencyTitle == "AUD"{
-                        ViewController.audPrice =  self.formatPrice(currency.aud)
-                    }else if j.currencyTitle == "SEK"{
-                        ViewController.sekPrice =  self.formatPrice(currency.sek)
+                        self.audPrice =  self.formatPrice(currency.aud)
                     }else if j.currencyTitle == "NOK"{
-                        ViewController.nokPrice =  self.formatPrice(currency.nok)
+                        self.nokPrice =  self.formatPrice(currency.nok)
                     }else if j.currencyTitle == "RUB"{
-                        ViewController.rubPrice =  self.formatPrice(currency.rub)
+                        self.rubPrice =  self.formatPrice(currency.rub)
                     }
                     
                     //Coins
                     else if j.currencyTitle == "BTC"{
-                        ViewController.btcPrice =  self.formatPrice(currency.btc)
+                        self.btcPrice =  self.formatPrice(currency.btc)
                     }else if j.currencyTitle == "ETH"{
-                        ViewController.ethdPrice =  self.formatPrice(currency.eth)
+                        self.ethdPrice =  self.formatPrice(currency.eth)
                     }else if j.currencyTitle == "LTC"{
-                        ViewController.ltcPrice =  self.formatPrice(currency.ltc)
+                        self.ltcPrice =  self.formatPrice(currency.ltc)
                     }else if j.currencyTitle == "BCH"{
-                        ViewController.bchPrice =  self.formatPrice(currency.bch)
+                        self.bchPrice =  self.formatPrice(currency.bch)
                     }else if j.currencyTitle == "BNB"{
-                        ViewController.bnbdPrice =  self.formatPrice(currency.bnb)
+                        self.bnbdPrice =  self.formatPrice(currency.bnb)
                     }
                     
                     //Gold
                     else if j.currencyTitle == "XAG"{
-                        ViewController.xagPrice =  self.formatPrice(currency.xag)
+                        self.xagPrice =  self.formatPrice(currency.xag)
                     }else if j.currencyTitle == "XAU"{
-                        ViewController.xauPrice =  self.formatPrice(currency.xau)
+                       self.xauPrice =  self.formatPrice(currency.xau)
                     }
                 }
             }
@@ -168,6 +171,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout{
     }
 
     @objc func refreshData() -> Void{
+        print("3")
         fetchData()
     }
     
@@ -198,57 +202,57 @@ extension ViewController : UICollectionViewDataSource {
         cell.fullCurrencyTitle.text = item.fullCurrencyTitle.localized()
         cell.currencyTitle.text = item.currencyTitle.localized()
         
-        cell.delegate = self
+//        cell.delegate = self
          if cell.currencyTitle.text == "USD"{
-             cell.previousRate.text = ViewController.usdPrice
-             cell.upToDateRate.text = ViewController.usdPrice
+             cell.previousRate.text = usdPrice
+             cell.upToDateRate.text = usdPrice
          }else if cell.currencyTitle.text == "EUR"{
-            cell.previousRate.text = ViewController.eurPrice
-            cell.upToDateRate.text = ViewController.eurPrice
+            cell.previousRate.text = eurPrice
+            cell.upToDateRate.text = eurPrice
          }else if cell.currencyTitle.text == "GBP"{
-            cell.previousRate.text = ViewController.gbpPrice
-            cell.upToDateRate.text = ViewController.gbpPrice
+            cell.previousRate.text = gbpPrice
+            cell.upToDateRate.text = gbpPrice
         }else if cell.currencyTitle.text == "CHF"{
-            cell.previousRate.text = ViewController.chfPrice
-            cell.upToDateRate.text = ViewController.chfPrice
+            cell.previousRate.text = chfPrice
+            cell.upToDateRate.text = chfPrice
+        }else if cell.currencyTitle.text == "CAD"{
+            cell.previousRate.text = caddPrice
+            cell.upToDateRate.text = caddPrice
         }else if cell.currencyTitle.text == "AUD"{
-            cell.previousRate.text = ViewController.audPrice
-            cell.upToDateRate.text = ViewController.audPrice
-        }else if cell.currencyTitle.text == "SEK"{
-            cell.previousRate.text = ViewController.sekPrice
-            cell.upToDateRate.text = ViewController.sekPrice
+            cell.previousRate.text = audPrice
+            cell.upToDateRate.text = audPrice
         }else if cell.currencyTitle.text == "NOK"{
-            cell.previousRate.text = ViewController.nokPrice
-            cell.upToDateRate.text = ViewController.nokPrice
-        }else if cell.currencyTitle.text == "GBP"{
-            cell.previousRate.text = ViewController.gbpPrice
-            cell.upToDateRate.text = ViewController.gbpPrice
+            cell.previousRate.text = nokPrice
+            cell.upToDateRate.text = nokPrice
+        }else if cell.currencyTitle.text == "RUB"{
+            cell.previousRate.text = rubPrice
+            cell.upToDateRate.text = rubPrice
         }
         
         //Coins
         else if cell.currencyTitle.text == "BTC"{
-            cell.previousRate.text = ViewController.btcPrice
-            cell.upToDateRate.text = ViewController.btcPrice
+            cell.previousRate.text = btcPrice
+            cell.upToDateRate.text = btcPrice
         }else if cell.currencyTitle.text == "ETH"{
-            cell.previousRate.text = ViewController.ethdPrice
-            cell.upToDateRate.text = ViewController.ethdPrice
+            cell.previousRate.text = ethdPrice
+            cell.upToDateRate.text = ethdPrice
         }else if cell.currencyTitle.text == "LTC"{
-            cell.previousRate.text = ViewController.ltcPrice
-            cell.upToDateRate.text = ViewController.ltcPrice
+            cell.previousRate.text = ltcPrice
+            cell.upToDateRate.text = ltcPrice
         }else if cell.currencyTitle.text == "BCH"{
-            cell.previousRate.text = ViewController.bchPrice
-            cell.upToDateRate.text = ViewController.bchPrice
+            cell.previousRate.text = bchPrice
+            cell.upToDateRate.text = bchPrice
         }else if cell.currencyTitle.text == "BNB"{
-            cell.previousRate.text = ViewController.bnbdPrice
-            cell.upToDateRate.text = ViewController.bnbdPrice
+            cell.previousRate.text = bnbdPrice
+            cell.upToDateRate.text = bnbdPrice
         }
         
         else if cell.currencyTitle.text == "XAG"{
-            cell.previousRate.text = ViewController.xagPrice
-            cell.upToDateRate.text = ViewController.xagPrice
+            cell.previousRate.text = xagPrice
+            cell.upToDateRate.text = xagPrice
         }else if cell.currencyTitle.text == "XAU"{
-            cell.previousRate.text = ViewController.xauPrice
-            cell.upToDateRate.text = ViewController.xauPrice
+            cell.previousRate.text = xauPrice
+            cell.upToDateRate.text = xauPrice
         }
         
         return cell
@@ -282,10 +286,11 @@ extension ViewController : UICollectionViewDataSource {
 
 
 
-
-extension ViewController : MainCollectionViewCellDelegate {
-    func refreshAPIHandler(){
-        fetchData()
-    }
-}
+//
+//extension ViewController : MainCollectionViewCellDelegate {
+//    func refreshAPIHandler(){
+//        print("4")
+//        fetchData()
+//    }
+//}
 

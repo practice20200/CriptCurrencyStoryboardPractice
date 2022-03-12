@@ -16,11 +16,11 @@ class CoinsViewController: UIViewController, UICollectionViewDelegateFlowLayout 
     let urlString =  "https://api.coingecko.com/api/v3/exchange_rates"
 //    @IBOutlet weak var collectionView: UICollectionView!
     //Coins
-    static var btcPrice = ""
-    static var ethdPrice = ""
-    static var ltcPrice = ""
-    static var bchPrice = ""
-    static var bnbdPrice = ""
+    var btcPrice = ""
+    var ethdPrice = ""
+    var ltcPrice = ""
+    var bchPrice = ""
+    var bnbdPrice = ""
     
     
     var data = MainCollectionViewData.dataProvider()
@@ -116,22 +116,23 @@ class CoinsViewController: UIViewController, UICollectionViewDelegateFlowLayout 
     
     
     func setPrices(currency: Currency){
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
             for i in self.data {
                 print("data\(i)")
                 for j in i.1{
                     print("data\(j)")
                     //Coins
                     if j.currencyTitle == "BTC"{
-                        ViewController.btcPrice =  self.formatPrice(currency.btc)
+                        self.btcPrice =  self.formatPrice(currency.btc)
                     }else if j.currencyTitle == "ETH"{
-                        ViewController.ethdPrice =  self.formatPrice(currency.eth)
+                        self.ethdPrice =  self.formatPrice(currency.eth)
                     }else if j.currencyTitle == "LTC"{
-                        ViewController.ltcPrice =  self.formatPrice(currency.ltc)
+                        self.ltcPrice =  self.formatPrice(currency.ltc)
                     }else if j.currencyTitle == "BCH"{
-                        ViewController.bchPrice =  self.formatPrice(currency.bch)
+                        self.bchPrice =  self.formatPrice(currency.bch)
                     }else if j.currencyTitle == "BNB"{
-                        ViewController.bnbdPrice =  self.formatPrice(currency.bnb)
+                        self.bnbdPrice =  self.formatPrice(currency.bnb)
                     }
                 }
             }
@@ -176,20 +177,20 @@ extension CoinsViewController : UICollectionViewDataSource {
         
         cell.delegate = self
         if cell.currencyTitle.text == "BTC"{
-            cell.previousRate.text = ViewController.btcPrice
-            cell.upToDateRate.text = ViewController.btcPrice
+            cell.previousRate.text = btcPrice
+            cell.upToDateRate.text = btcPrice
         }else if cell.currencyTitle.text == "ETH"{
-            cell.previousRate.text = ViewController.ethdPrice
-            cell.upToDateRate.text = ViewController.ethdPrice
+            cell.previousRate.text = ethdPrice
+            cell.upToDateRate.text = ethdPrice
         }else if cell.currencyTitle.text == "LTC"{
-            cell.previousRate.text = ViewController.ltcPrice
-            cell.upToDateRate.text = ViewController.ltcPrice
+            cell.previousRate.text = ltcPrice
+            cell.upToDateRate.text = ltcPrice
         }else if cell.currencyTitle.text == "BCH"{
-            cell.previousRate.text = ViewController.bchPrice
-            cell.upToDateRate.text = ViewController.bchPrice
+            cell.previousRate.text = bchPrice
+            cell.upToDateRate.text = bchPrice
         }else if cell.currencyTitle.text == "BNB"{
-            cell.previousRate.text = ViewController.bnbdPrice
-            cell.upToDateRate.text = ViewController.bnbdPrice
+            cell.previousRate.text = bnbdPrice
+            cell.upToDateRate.text = bnbdPrice
         }
         
         

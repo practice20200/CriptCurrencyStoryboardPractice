@@ -18,6 +18,9 @@ class GoldViewController: UIViewController,UICollectionViewDelegateFlowLayout {
     var data = MainCollectionViewData.dataProvider()
     var indextitle = "Gold"
     
+    var xagPrice = ""
+    var xauPrice = ""
+    
     lazy var collectionView: UICollectionView = {
         
         let viewLayout =  UICollectionViewFlowLayout()
@@ -106,16 +109,17 @@ class GoldViewController: UIViewController,UICollectionViewDelegateFlowLayout {
     
     
     func setPrices(currency: Currency){
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
             for i in self.data {
                 print("data\(i)")
                 for j in i.1{
                     print("data\(j)")
                     //Coins
                      if j.currencyTitle == "XAG"{
-                        ViewController.xagPrice =  self.formatPrice(currency.xag)
+                         self.xagPrice =  self.formatPrice(currency.xag)
                     }else if j.currencyTitle == "XAU"{
-                        ViewController.xauPrice =  self.formatPrice(currency.xau)
+                        self.xauPrice =  self.formatPrice(currency.xau)
                     }
                 }
             }
@@ -161,11 +165,11 @@ extension GoldViewController : UICollectionViewDataSource {
         cell.currencyTitle.text = item.currencyTitle.localized()
 
         if cell.currencyTitle.text == "XAG"{
-            cell.previousRate.text = ViewController.xagPrice
-            cell.upToDateRate.text = ViewController.xagPrice
+            cell.previousRate.text = xagPrice
+            cell.upToDateRate.text = xagPrice
         }else if cell.currencyTitle.text == "XAU"{
-            cell.previousRate.text = ViewController.xauPrice
-            cell.upToDateRate.text = ViewController.xauPrice
+            cell.previousRate.text = xauPrice
+            cell.upToDateRate.text = xauPrice
         }
         
         return cell

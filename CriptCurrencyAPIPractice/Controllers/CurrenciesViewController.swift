@@ -15,15 +15,15 @@ class CurrenciesViewController: UIViewController, UICollectionViewDelegateFlowLa
     @IBOutlet weak var timeLabel: UILabel!
     let urlString =  "https://api.coingecko.com/api/v3/exchange_rates"
     
-    static var usdPrice = ""
-    static var eurPrice = ""
-    static var gbpPrice = ""
-    static var chfPrice = ""
-    static var caddPrice = ""
-    static var audPrice = ""
-    static var sekPrice = ""
-    static var nokPrice = ""
-    static var rubPrice = ""
+    var usdPrice = ""
+    var eurPrice = ""
+    var gbpPrice = ""
+    var chfPrice = ""
+    var caddPrice = ""
+    var audPrice = ""
+    var sekPrice = ""
+    var nokPrice = ""
+    var rubPrice = ""
     
 
     
@@ -122,29 +122,28 @@ class CurrenciesViewController: UIViewController, UICollectionViewDelegateFlowLa
     }
     
     func setPrices(currency: Currency){
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
             for i in self.data {
                 print("data\(i)")
                 for j in i.1{
                     print("data\(j)")
                     if j.currencyTitle == "USD"{
-                        ViewController.usdPrice =  self.formatPrice(currency.usd)
+                        self.usdPrice =  self.formatPrice(currency.usd)
                     }else if j.currencyTitle == "EUR"{
-                        ViewController.eurPrice =  self.formatPrice(currency.eur)
+                        self.eurPrice =  self.formatPrice(currency.eur)
                     }else if j.currencyTitle == "GBP"{
-                        ViewController.gbpPrice =  self.formatPrice(currency.gbp)
+                        self.gbpPrice =  self.formatPrice(currency.gbp)
                     }else if j.currencyTitle == "CHF"{
-                        ViewController.chfPrice =  self.formatPrice(currency.chf)
+                        self.chfPrice =  self.formatPrice(currency.chf)
                     }else if j.currencyTitle == "CAD"{
-                        ViewController.caddPrice =  self.formatPrice(currency.cad)
+                        self.caddPrice =  self.formatPrice(currency.cad)
                     }else if j.currencyTitle == "AUD"{
-                        ViewController.audPrice =  self.formatPrice(currency.aud)
-                    }else if j.currencyTitle == "SEK"{
-                        ViewController.sekPrice =  self.formatPrice(currency.sek)
+                        self.audPrice =  self.formatPrice(currency.aud)
                     }else if j.currencyTitle == "NOK"{
-                        ViewController.nokPrice =  self.formatPrice(currency.nok)
+                        self.nokPrice =  self.formatPrice(currency.nok)
                     }else if j.currencyTitle == "RUB"{
-                        ViewController.rubPrice =  self.formatPrice(currency.rub)
+                        self.rubPrice =  self.formatPrice(currency.rub)
                     }
                 }
                 self.timeLabel?.text = DateFormatters.dateForMatter(date: Date())
@@ -179,33 +178,32 @@ extension CurrenciesViewController : UICollectionViewDataSource {
         cell.currencyIconImage.image = item.currencyIcon
         cell.fullCurrencyTitle.text = item.fullCurrencyTitle.localized()
         cell.currencyTitle.text = item.currencyTitle.localized()
-        
-        cell.delegate = self
-         if cell.currencyTitle.text == "USD"{
-             cell.previousRate.text = ViewController.usdPrice
-             cell.upToDateRate.text = ViewController.usdPrice
-         }else if cell.currencyTitle.text == "EUR"{
-            cell.previousRate.text = ViewController.eurPrice
-            cell.upToDateRate.text = ViewController.eurPrice
-         }else if cell.currencyTitle.text == "GBP"{
-            cell.previousRate.text = ViewController.gbpPrice
-            cell.upToDateRate.text = ViewController.gbpPrice
-        }else if cell.currencyTitle.text == "CHF"{
-            cell.previousRate.text = ViewController.chfPrice
-            cell.upToDateRate.text = ViewController.chfPrice
-        }else if cell.currencyTitle.text == "AUD"{
-            cell.previousRate.text = ViewController.audPrice
-            cell.upToDateRate.text = ViewController.audPrice
-        }else if cell.currencyTitle.text == "SEK"{
-            cell.previousRate.text = ViewController.sekPrice
-            cell.upToDateRate.text = ViewController.sekPrice
-        }else if cell.currencyTitle.text == "NOK"{
-            cell.previousRate.text = ViewController.nokPrice
-            cell.upToDateRate.text = ViewController.nokPrice
+ 
+        if cell.currencyTitle.text == "USD"{
+            cell.previousRate.text = usdPrice
+            cell.upToDateRate.text = usdPrice
+        }else if cell.currencyTitle.text == "EUR"{
+           cell.previousRate.text = eurPrice
+           cell.upToDateRate.text = eurPrice
         }else if cell.currencyTitle.text == "GBP"{
-            cell.previousRate.text = ViewController.gbpPrice
-            cell.upToDateRate.text = ViewController.gbpPrice
-        }
+           cell.previousRate.text = gbpPrice
+           cell.upToDateRate.text = gbpPrice
+       }else if cell.currencyTitle.text == "CHF"{
+           cell.previousRate.text = chfPrice
+           cell.upToDateRate.text = chfPrice
+       }else if cell.currencyTitle.text == "CAD"{
+           cell.previousRate.text = caddPrice
+           cell.upToDateRate.text = caddPrice
+       }else if cell.currencyTitle.text == "AUD"{
+           cell.previousRate.text = audPrice
+           cell.upToDateRate.text = audPrice
+       }else if cell.currencyTitle.text == "NOK"{
+           cell.previousRate.text = nokPrice
+           cell.upToDateRate.text = nokPrice
+       }else if cell.currencyTitle.text == "RUB"{
+           cell.previousRate.text = rubPrice
+           cell.upToDateRate.text = rubPrice
+       }
         
         
         return cell
@@ -219,11 +217,6 @@ extension CurrenciesViewController : UICollectionViewDataSource {
 
 }
 
-extension CurrenciesViewController : MainCollectionViewCellDelegate{
-    func refreshAPIHandler() {
-        refreshData()
-    }
-}
 
 
 
