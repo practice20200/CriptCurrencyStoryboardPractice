@@ -43,6 +43,8 @@ class GoldViewController: UIViewController,UICollectionViewDelegateFlowLayout {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         title = "Gold".localized()
+        fetchData()
+        let _ = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(refreshData), userInfo: nil, repeats: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -124,6 +126,7 @@ class GoldViewController: UIViewController,UICollectionViewDelegateFlowLayout {
                 }
             }
             self.dateLabel?.text = DateFormatters.dateForMatter(date: Date())
+            self.collectionView.reloadData()
         }
             
     }
@@ -138,11 +141,6 @@ class GoldViewController: UIViewController,UICollectionViewDelegateFlowLayout {
 
 }
 
-extension GoldViewController : MainCollectionViewCellDelegate {
-    func refreshAPIHandler(){
-        refreshData()
-    }
-}
 
 
 extension GoldViewController : UICollectionViewDelegate {
@@ -158,7 +156,6 @@ extension GoldViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MainCollectionViewCell
         
-        cell.delegate = self
         let item = coinInformationFinder()[indexPath.row]
         cell.currencyIconImage.image = item.currencyIcon
         cell.fullCurrencyTitle.text = item.fullCurrencyTitle.localized()

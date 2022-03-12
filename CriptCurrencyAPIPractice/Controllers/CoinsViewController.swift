@@ -47,7 +47,8 @@ class CoinsViewController: UIViewController, UICollectionViewDelegateFlowLayout 
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         title = "Coins".localized()
-
+        fetchData()
+        let _ = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(refreshData), userInfo: nil, repeats: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -137,6 +138,7 @@ class CoinsViewController: UIViewController, UICollectionViewDelegateFlowLayout 
                 }
             }
             self.dateLabel?.text = DateFormatters.dateForMatter(date: Date())
+            self.collectionView.reloadData()
         }
             
     }
@@ -147,12 +149,6 @@ class CoinsViewController: UIViewController, UICollectionViewDelegateFlowLayout 
 
     @objc func refreshData() -> Void{
         fetchData()
-    }
-}
-
-extension CoinsViewController : MainCollectionViewCellDelegate {
-    func refreshAPIHandler(){
-        refreshData()
     }
 }
 
@@ -174,8 +170,8 @@ extension CoinsViewController : UICollectionViewDataSource {
         cell.currencyIconImage.image = item.currencyIcon
         cell.fullCurrencyTitle.text = item.fullCurrencyTitle.localized()
         cell.currencyTitle.text = item.currencyTitle.localized()
+
         
-        cell.delegate = self
         if cell.currencyTitle.text == "BTC"{
             cell.previousRate.text = btcPrice
             cell.upToDateRate.text = btcPrice
