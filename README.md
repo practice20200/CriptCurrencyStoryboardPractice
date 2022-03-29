@@ -4,10 +4,10 @@ Cript Currency App for API practice. This app is developed only on the education
 
 The whole design is refered by Chand. Please check Chand if needed.
 
-chand:
+* chand:
 https://getchand.com
 
-CoinGeko:
+* CoinGeko:
 https://www.coingecko.com
 
 
@@ -16,25 +16,14 @@ Through this app, users can track the latest rate of different types of currenci
 
 
 ## Feature
-API: CoinGeko
-
-Others: Localization, MVC Models
+* API: CoinGeko
+* Others: Localization, MVC Models
 
 
 ## Authors
-
-Contributors names and contact info
-
 Auther: Tom
 Mail: tdevapp73074@gmail.com
 
-## Version History
-
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
 
 ## License
 
