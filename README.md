@@ -14,6 +14,7 @@ Through this app, users can track the latest rate of different types of currenci
 
 ## Feature
 API: CoinGeko
+
 Others: Localization, MVC Models
 
 
