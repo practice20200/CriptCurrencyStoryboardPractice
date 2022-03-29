@@ -3,20 +3,18 @@
 Simple overview of use/purpose.
 
 ## Description
+Cript Currency App for API practice. This  app is developed only on the purpose of practice for API. The whole design is refered by Chand. Please check Chand in App stroe if needed.
 
-An in-depth paragraph about your project and overview of use.
 
-## Getting Started
 
 ### Dependencies
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+iPhone 
+
 
 ### Installing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+Apple Store
 
 ### Executing program
 
@@ -37,7 +35,7 @@ command to run if program contains helper info
 
 Contributors names and contact info
 
-ex. Dominique Pizzie  
+Tom
 ex. [@DomPizzie](https://twitter.com/dompizzie)
 
 ## Version History
@@ -50,7 +48,7 @@ ex. [@DomPizzie](https://twitter.com/dompizzie)
 
 ## License
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+This project is licensed under Tom License - see the LICENSE.md file for details
 
 ## Acknowledgments
 
