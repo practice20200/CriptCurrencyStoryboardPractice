@@ -1,15 +1,17 @@
-# Project Title
+# Cript Currency Tracker
 
 Simple overview of use/purpose.
 
 ## Description
-Cript Currency App for API practice. This  app is developed only on the purpose of practice for API. The whole design is refered by Chand. Please check Chand in App stroe if needed.
+Cript Currency App for API practice. This app is developed only on the educational purpose of practice for API as a part of course project. 
 
+The whole design is refered by Chand. Please check Chand if needed.
 
+chand:
+https://getchand.com
 
 ### Dependencies
-
-iPhone 
+iPhone
 
 
 ### Installing
@@ -36,7 +38,7 @@ command to run if program contains helper info
 Contributors names and contact info
 
 Tom
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+Mail: tdevapp73074@gmail.com
 
 ## Version History
 
