@@ -4,13 +4,6 @@ Cript Currency App for API practice. This app is developed only on the education
 
 The whole design is refered by Chand. Please check Chand if needed.
 
-* chand:
-https://getchand.com
-
-* CoinGeko:
-https://www.coingecko.com
-
-
 ## Description
 Through this app, users can track the latest rate of different types of currencies such as currencies, coins and gold.
 
@@ -32,8 +25,7 @@ This project is licensed under Tom License - see the LICENSE.md file for details
 ## Acknowledgments
 
 Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
+* Chand:
+https://getchand.com
+* CoinGeko:
+https://www.coingecko.com
