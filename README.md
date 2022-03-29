@@ -7,6 +7,9 @@ The whole design is refered by Chand. Please check Chand if needed.
 chand:
 https://getchand.com
 
+CoinGeko:
+https://www.coingecko.com
+
 
 ## Description
 Through this app, users can track the latest rate of different types of currencies such as currencies, coins and gold.
