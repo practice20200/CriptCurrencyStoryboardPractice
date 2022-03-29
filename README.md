@@ -13,12 +13,12 @@ Through this app, users can track the latest rate of different types of currenci
 
 
 ## Authors
-* Auther: Tom
+* Auther: Practice20200
 * Mail: tdevapp73074@gmail.com
 
 
 ## License
-This project is licensed under Tom License - see the LICENSE.md file for details
+This project is licensed under Practice20200 License - see the LICENSE.md file for details
 
 
 ## Acknowledgments
