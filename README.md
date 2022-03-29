@@ -14,8 +14,8 @@ Through this app, users can track the latest rate of different types of currenci
 
 
 ## Authors
-Auther: Tom
-Mail: tdevapp73074@gmail.com
+* Auther: Tom
+* Mail: tdevapp73074@gmail.com
 
 
 ## License
